@@ -445,31 +445,54 @@ const toggleAccordion = (index) => {
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 75svh; /* يقصر على الموبايل */
-    height: 75svh;
+    min-height: 65svh;
+    height: 65svh;
     background-position: center center;
-    padding-top: 4.8rem;
-    padding-bottom: 1.5rem;
+    padding-top: 60px;
+    padding-bottom: 8px;
+    align-items: center;
   }
 
+  /* قلل الـ padding الداخلي */
+  .hero-container,
+  .hero-content {
+    padding-top: 16px;
+    padding-bottom: 16px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* صغّر الـ font size عشان النص ما يمددش الهيرو */
+  .hero-content h1,
+  .display-title,
   .hero-title {
-    font-size: clamp(1.45rem, 5.2vw, 1.95rem);
-    margin-bottom: 0.75rem;
+    font-size: 32px;
+    line-height: 1.4;
+    margin-bottom: 8px;
   }
 
+  .hero-content p,
   .hero-description {
-    margin-bottom: 1.15rem;
-    font-size: 0.9rem;
+    font-size: 14px;
+    margin-top: 8px;
+    margin-bottom: 16px;
     line-height: 1.6;
   }
 
+  /* الأزرار جنب بعض مش تحت بعض */
+  .hero-ctas,
   .hero-cta-group {
-    gap: 0.65rem;
+    display: flex;
+    flex-direction: row;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
   }
 
   .hero-cta-group .btn {
-    padding: 0.6rem 1.15rem;
-    font-size: 0.85rem;
+    padding: 8px 16px;
+    font-size: 13.5px;
   }
 
   .scroll-indicator {
