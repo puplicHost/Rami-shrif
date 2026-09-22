@@ -57,34 +57,36 @@
     <!-- 3. فلسفتنا — Philosophy Strip -->
     <section id="philosophy" class="section section-tight bg-cream philosophy-section fade-in-section">
       <div class="container philosophy-container">
-        <h2 class="h1-title philosophy-quote">
-          «الإجراء القانوني ليس نقطة البداية.»
-        </h2>
-        <div class="divider-brown divider-center"></div>
-        <p class="body-regular philosophy-subtext">
-          البداية الصحيحة هي فهم المشكلة، وتقييم الموقف القانوني، وتحديد الخيارات المتاحة، ثم اختيار المسار الأنسب.
-        </p>
+        <div class="philosophy-card">
+          <h2 class="h1-title philosophy-quote philosophy-headline">
+            «الإجراء القانوني ليس نقطة البداية.»
+          </h2>
+          <div class="divider-brown divider-center"></div>
+          <p class="body-regular philosophy-subtext">
+            البداية الصحيحة هي فهم المشكلة، وتقييم الموقف القانوني، وتحديد الخيارات المتاحة، ثم اختيار المسار الأنسب.
+          </p>
 
-        <!-- Horizontal Process Flow -->
-        <div class="philosophy-flow" aria-label="تسلسل مراحل العمل">
-          <div class="flow-item">
-            <span class="flow-word">فهم</span>
-          </div>
-          <div class="flow-arrow" aria-hidden="true">←</div>
-          <div class="flow-item">
-            <span class="flow-word">تقييم</span>
-          </div>
-          <div class="flow-arrow" aria-hidden="true">←</div>
-          <div class="flow-item">
-            <span class="flow-word">خيارات</span>
-          </div>
-          <div class="flow-arrow" aria-hidden="true">←</div>
-          <div class="flow-item">
-            <span class="flow-word">اختيار</span>
-          </div>
-          <div class="flow-arrow" aria-hidden="true">←</div>
-          <div class="flow-item">
-            <span class="flow-word">متابعة</span>
+          <!-- Horizontal Process Flow -->
+          <div class="philosophy-flow" aria-label="تسلسل مراحل العمل">
+            <div class="flow-item">
+              <span class="flow-word">فهم</span>
+            </div>
+            <div class="flow-arrow" aria-hidden="true">←</div>
+            <div class="flow-item">
+              <span class="flow-word">تقييم</span>
+            </div>
+            <div class="flow-arrow" aria-hidden="true">←</div>
+            <div class="flow-item">
+              <span class="flow-word">خيارات</span>
+            </div>
+            <div class="flow-arrow" aria-hidden="true">←</div>
+            <div class="flow-item">
+              <span class="flow-word">اختيار</span>
+            </div>
+            <div class="flow-arrow" aria-hidden="true">←</div>
+            <div class="flow-item">
+              <span class="flow-word">متابعة</span>
+            </div>
           </div>
         </div>
       </div>
@@ -145,28 +147,12 @@
             :is-full-width-mobile="index === practiceAreas.length - 1"
           >
             <template #icon>
-              <!-- Bespoke Minimal SVG Line Icons -->
-              <svg v-if="area.slug === 'civil'" viewBox="0 0 24 24" class="card-icon" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M12 3v18M3 9l9-6 9 6M5 21h14" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-              <svg v-else-if="area.slug === 'commercial'" viewBox="0 0 24 24" class="card-icon" fill="none" stroke="currentColor" stroke-width="1.8">
-                <rect x="3" y="4" width="18" height="16" rx="2" stroke-linecap="round"/>
-                <path d="M3 10h18M8 15h2M14 15h2" stroke-linecap="round"/>
-              </svg>
-              <svg v-else-if="area.slug === 'corporate-law'" viewBox="0 0 24 24" class="card-icon" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M3 21h18M5 21V7l8-4v18M13 11l6 3v7" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M9 10h.01M9 14h.01M9 18h.01" stroke-linecap="round" stroke-width="2.5"/>
-              </svg>
-              <svg v-else-if="area.slug === 'personal-status'" viewBox="0 0 24 24" class="card-icon" fill="none" stroke="currentColor" stroke-width="1.8">
-                <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2" stroke-linecap="round"/>
-                <circle cx="9" cy="7" r="4"/>
-                <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75" stroke-linecap="round"/>
-              </svg>
-              <svg v-else viewBox="0 0 24 24" class="card-icon" fill="none" stroke="currentColor" stroke-width="1.8">
-                <rect x="2" y="6" width="20" height="12" rx="2"/>
-                <circle cx="12" cy="12" r="3"/>
-                <path d="M6 12h.01M18 12h.01" stroke-linecap="round" stroke-width="2"/>
-              </svg>
+              <!-- Lucide Icons for Practice Areas -->
+              <Scale v-if="area.slug === 'civil'" :size="26" :stroke-width="1.5" />
+              <Briefcase v-else-if="area.slug === 'commercial'" :size="26" :stroke-width="1.5" />
+              <Building2 v-else-if="area.slug === 'corporate-law'" :size="26" :stroke-width="1.5" />
+              <Users v-else-if="area.slug === 'personal-status'" :size="26" :stroke-width="1.5" />
+              <DollarSign v-else :size="26" :stroke-width="1.5" />
             </template>
           </PracticeCard>
         </div>
@@ -290,6 +276,13 @@
 
 <script setup>
 import { ref } from 'vue'
+import {
+  Scale,
+  Briefcase,
+  Building2,
+  Users,
+  DollarSign
+} from 'lucide-vue-next'
 import SectionLabel from '@/components/ui/SectionLabel.vue'
 import PracticeCard from '@/components/ui/PracticeCard.vue'
 import ServiceCard from '@/components/ui/ServiceCard.vue'
@@ -398,13 +391,23 @@ const toggleAccordion = (index) => {
 /* 2. Hero Section */
 .hero-section {
   position: relative;
-  min-height: 100dvh;
+  min-height: 100svh;
   display: flex;
   align-items: center;
   padding-top: 5.5rem;
   padding-bottom: 4rem;
   overflow: hidden;
   background-color: var(--color-navy);
+  background-size: cover;
+  background-position: center center;
+  background-attachment: scroll; /* مش fixed على الموبايل */
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 100svh;
+    background-position: center center;
+  }
 }
 
 .hero-background-media {
@@ -602,6 +605,14 @@ const toggleAccordion = (index) => {
   max-width: 860px;
 }
 
+.philosophy-card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--color-cream-border);
+  border-radius: 16px;
+  padding: 3rem 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
 .philosophy-quote {
   color: var(--color-navy);
   font-size: clamp(1.6rem, 3.2vw, 2.35rem);
@@ -626,6 +637,30 @@ const toggleAccordion = (index) => {
   background: rgba(255, 255, 255, 0.65);
   border: 1px solid var(--color-cream-border);
   border-radius: var(--radius-pill);
+}
+
+@media (max-width: 768px) {
+  .philosophy-section {
+    padding: 60px 24px;
+  }
+
+  .philosophy-card {
+    padding: 40px 28px;
+    border-radius: 16px;
+  }
+
+  .philosophy-headline {
+    font-size: 22px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+  }
+
+  .philosophy-flow {
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+    font-size: 14px;
+  }
 }
 
 .flow-item {

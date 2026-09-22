@@ -34,9 +34,7 @@
           <li class="has-dropdown" @mouseenter="showPracticeMenu = true" @mouseleave="showPracticeMenu = false">
             <router-link to="/practice-areas/civil" class="nav-link dropdown-toggle" :class="{ active: isPracticeRoute }">
               مجالات العمل
-              <svg class="dropdown-chevron" viewBox="0 0 20 20" fill="currentColor" width="14" height="14">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
+              <ChevronDown :size="14" class="dropdown-chevron" />
             </router-link>
             <div class="dropdown-menu" v-show="showPracticeMenu">
               <router-link to="/practice-areas/civil" class="dropdown-item">القانون المدني</router-link>
@@ -51,9 +49,7 @@
           <li class="has-dropdown" @mouseenter="showServicesMenu = true" @mouseleave="showServicesMenu = false">
             <router-link to="/services/consultation" class="nav-link dropdown-toggle" :class="{ active: isServiceRoute }">
               خدماتنا
-              <svg class="dropdown-chevron" viewBox="0 0 20 20" fill="currentColor" width="14" height="14">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
+              <ChevronDown :size="14" class="dropdown-chevron" />
             </router-link>
             <div class="dropdown-menu" v-show="showServicesMenu">
               <router-link to="/services/consultation" class="dropdown-item">الاستشارات القانونية</router-link>
@@ -120,10 +116,7 @@
         <div class="drawer-header">
           <AppLogo theme="dark" :size="44" />
           <button class="drawer-close-btn" @click="closeMobileMenu" aria-label="إغلاق القائمة">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
-              <line x1="18" y1="6" x2="6" y2="18"></line>
-              <line x1="6" y1="6" x2="18" y2="18"></line>
-            </svg>
+            <X :size="22" :stroke-width="2" />
           </button>
         </div>
 
@@ -201,6 +194,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import { ChevronDown, X } from 'lucide-vue-next'
 import AppLogo from '@/components/ui/AppLogo.vue'
 
 const route = useRoute()

@@ -3,7 +3,12 @@
     <!-- Desktop Grid Card View -->
     <div class="service-desktop-card">
       <div class="service-card-header">
-        <span class="service-index">{{ indexNumber }}</span>
+        <div class="service-card-top-row">
+          <span class="service-index">{{ indexNumber }}</span>
+          <div class="service-icon-wrap">
+            <component :is="serviceIcon" :size="24" :stroke-width="1.5" />
+          </div>
+        </div>
         <h3 class="service-title">{{ title }}</h3>
       </div>
       <p class="service-summary">{{ summary }}</p>
@@ -21,13 +26,12 @@
         :aria-expanded="isOpen"
       >
         <span class="acc-title-wrap">
+          <component :is="serviceIcon" :size="20" :stroke-width="1.5" class="acc-service-icon" />
           <span class="acc-index">{{ indexNumber }}</span>
           <span class="acc-title">{{ title }}</span>
         </span>
         <span class="acc-toggle-icon" :class="{ rotated: isOpen }">
-          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
-            <polyline points="6 9 12 15 18 9"></polyline>
-          </svg>
+          <ChevronDown :size="18" :stroke-width="2" />
         </span>
       </button>
 
@@ -43,7 +47,17 @@
 </template>
 
 <script setup>
-defineProps({
+import { computed } from 'vue'
+import {
+  MessageSquare,
+  FileText,
+  Gavel,
+  Landmark,
+  Building,
+  ChevronDown
+} from 'lucide-vue-next'
+
+const props = defineProps({
   title: {
     type: String,
     required: true
@@ -67,6 +81,23 @@ defineProps({
 })
 
 defineEmits(['toggle'])
+
+const serviceIcon = computed(() => {
+  switch (props.slug) {
+    case 'consultation':
+      return MessageSquare
+    case 'contracts':
+      return FileText
+    case 'disputes':
+      return Gavel
+    case 'representation':
+      return Landmark
+    case 'corporate-support':
+      return Building
+    default:
+      return FileText
+  }
+})
 </script>
 
 <style scoped>
@@ -100,6 +131,35 @@ defineEmits(['toggle'])
 
 .service-card-header {
   margin-bottom: 1.25rem;
+}
+
+.service-card-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.service-icon-wrap {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-cream);
+  color: var(--color-brown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.service-desktop-card:hover .service-icon-wrap {
+  background-color: var(--color-brown);
+  color: var(--color-white);
+}
+
+.acc-service-icon {
+  color: var(--color-brown);
+  flex-shrink: 0;
 }
 
 .service-index {

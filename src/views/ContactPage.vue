@@ -131,7 +131,9 @@
 
               <div class="info-items-list">
                 <div class="info-block">
-                  <span class="info-block-icon">🏢</span>
+                  <span class="info-block-icon">
+                    <Building2 :size="20" :stroke-width="1.75" />
+                  </span>
                   <div>
                     <strong class="info-title">المكتب الرئيسي:</strong>
                     <p class="info-desc">القاهرة الجديدة — التجمع الخامس — جمهورية مصر العربية</p>
@@ -139,7 +141,9 @@
                 </div>
 
                 <div class="info-block">
-                  <span class="info-block-icon">📞</span>
+                  <span class="info-block-icon">
+                    <Phone :size="20" :stroke-width="1.75" />
+                  </span>
                   <div>
                     <strong class="info-title">الهاتف المباشر:</strong>
                     <p class="info-desc" dir="ltr">+20 100 000 0000</p>
@@ -148,7 +152,9 @@
                 </div>
 
                 <div class="info-block">
-                  <span class="info-block-icon">✉️</span>
+                  <span class="info-block-icon">
+                    <Mail :size="20" :stroke-width="1.75" />
+                  </span>
                   <div>
                     <strong class="info-title">البريد الإلكتروني:</strong>
                     <p class="info-desc">info@ramisherif-law.com</p>
@@ -156,7 +162,9 @@
                 </div>
 
                 <div class="info-block">
-                  <span class="info-block-icon">⏰</span>
+                  <span class="info-block-icon">
+                    <Clock :size="20" :stroke-width="1.75" />
+                  </span>
                   <div>
                     <strong class="info-title">أوقات العمل واستقبال العملاء:</strong>
                     <p class="info-desc">الأحد – الخميس: 9:00 صباحاً – 6:00 مساءً</p>
@@ -167,7 +175,9 @@
 
               <!-- Map Placeholder Box -->
               <div class="map-placeholder">
-                <div class="map-marker-pin">📍</div>
+                <div class="map-marker-pin">
+                  <MapPin :size="28" :stroke-width="1.75" />
+                </div>
                 <div class="map-text">موقع المؤسسة في قلب القاهرة الجديدة</div>
                 <span class="map-sub">سهولة الوصول مع توافر مواقف سيارات خاصة للعملاء</span>
               </div>
@@ -181,6 +191,13 @@
 
 <script setup>
 import { reactive, ref } from 'vue'
+import {
+  Building2,
+  Phone,
+  Mail,
+  Clock,
+  MapPin
+} from 'lucide-vue-next'
 import SectionLabel from '@/components/ui/SectionLabel.vue'
 
 const form = reactive({

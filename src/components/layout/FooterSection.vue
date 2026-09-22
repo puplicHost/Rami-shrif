@@ -43,22 +43,39 @@
           <h4 class="footer-heading">معلومات التواصل</h4>
           <ul class="contact-info-list">
             <li class="contact-info-item">
-              <span class="info-icon">📍</span>
+              <span class="info-icon"><MapPin :size="18" :stroke-width="1.75" /></span>
               <span>القاهرة، جمهورية مصر العربية</span>
             </li>
             <li class="contact-info-item">
-              <span class="info-icon">📞</span>
+              <span class="info-icon"><Phone :size="18" :stroke-width="1.75" /></span>
               <span dir="ltr">+20 100 000 0000</span>
             </li>
             <li class="contact-info-item">
-              <span class="info-icon">✉️</span>
+              <span class="info-icon"><Mail :size="18" :stroke-width="1.75" /></span>
               <span>info@ramisherif-law.com</span>
             </li>
             <li class="contact-info-item">
-              <span class="info-icon">⏱️</span>
+              <span class="info-icon"><Clock :size="18" :stroke-width="1.75" /></span>
               <span>الأحد – الخميس: 9:00 ص – 6:00 م</span>
             </li>
           </ul>
+
+          <!-- Social media icons -->
+          <div class="footer-social-links" aria-label="منصات التواصل الاجتماعي">
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+              <Linkedin :size="18" :stroke-width="1.75" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+              <Twitter :size="18" :stroke-width="1.75" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+              <Facebook :size="18" :stroke-width="1.75" />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+              <Instagram :size="18" :stroke-width="1.75" />
+            </a>
+          </div>
+
           <div class="footer-cta-box">
             <router-link to="/contact" class="btn btn-primary btn-sm">
               احجز استشارة قانونية
@@ -82,6 +99,16 @@
 
 <script setup>
 import { computed } from 'vue'
+import {
+  Phone,
+  Mail,
+  MapPin,
+  Clock,
+  Linkedin,
+  Twitter,
+  Facebook,
+  Instagram
+} from 'lucide-vue-next'
 import AppLogo from '@/components/ui/AppLogo.vue'
 
 const currentYear = computed(() => new Date().getFullYear())
@@ -194,7 +221,37 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .info-icon {
-  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B26A5D;
+}
+
+.footer-social-links {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.social-link {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--color-silver);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.social-link:hover {
+  background: var(--color-brown);
+  color: var(--color-white);
+  border-color: var(--color-brown);
+  transform: translateY(-2px);
 }
 
 .footer-cta-box {

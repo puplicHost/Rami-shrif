@@ -6,11 +6,7 @@
   >
     <div class="card-icon-wrap">
       <slot name="icon">
-        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75">
-          <path d="M12 2L2 7l10 5 10-5-10-5z" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M2 17l10 5 10-5" stroke-linecap="round" stroke-linejoin="round" />
-          <path d="M2 12l10 5 10-5" stroke-linecap="round" stroke-linejoin="round" />
-        </svg>
+        <Scale :size="24" :stroke-width="1.5" />
       </slot>
     </div>
 
@@ -27,6 +23,8 @@
 </template>
 
 <script setup>
+import { Scale } from 'lucide-vue-next'
+
 defineProps({
   title: {
     type: String,
