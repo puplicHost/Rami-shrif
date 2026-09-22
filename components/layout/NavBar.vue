@@ -98,101 +98,103 @@
       </div>
     </div>
 
-    <!-- Mobile Drawer Overlay & Menu -->
-    <transition name="fade">
-      <div
-        v-if="isMobileMenuOpen"
-        class="mobile-backdrop"
-        @click="closeMobileMenu"
-      ></div>
-    </transition>
+    <!-- Mobile Drawer Overlay & Menu (Teleported to body for true full viewport coverage) -->
+    <Teleport to="body">
+      <transition name="fade">
+        <div
+          v-if="isMobileMenuOpen"
+          class="mobile-backdrop"
+          @click="closeMobileMenu"
+        ></div>
+      </transition>
 
-    <transition name="drawer">
-      <aside
-        v-if="isMobileMenuOpen"
-        class="mobile-drawer"
-        aria-label="قائمة الهاتف"
-      >
-        <div class="drawer-header">
-          <AppLogo theme="dark" :size="44" />
-          <button class="drawer-close-btn" @click="closeMobileMenu" aria-label="إغلاق القائمة">
-            <X :size="22" :stroke-width="2" />
-          </button>
-        </div>
-
-        <nav class="mobile-nav">
-          <ul class="mobile-nav-list">
-            <li>
-              <NuxtLink to="/" class="mobile-link" @click="closeMobileMenu">
-                الرئيسية
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/about" class="mobile-link" @click="closeMobileMenu">
-                من نحن
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/methodology" class="mobile-link" @click="closeMobileMenu">
-                منهجنا في العمل
-              </NuxtLink>
-            </li>
-            <li class="mobile-accordion-group">
-              <div class="mobile-accordion-head" @click="mobilePracticeOpen = !mobilePracticeOpen">
-                <span>مجالات العمل</span>
-                <span class="acc-arrow" :class="{ rotate: mobilePracticeOpen }">▾</span>
-              </div>
-              <ul v-show="mobilePracticeOpen" class="mobile-sublinks">
-                <li><NuxtLink to="/practice-areas/civil" @click="closeMobileMenu">القانون المدني</NuxtLink></li>
-                <li><NuxtLink to="/practice-areas/commercial" @click="closeMobileMenu">القانون التجاري</NuxtLink></li>
-                <li><NuxtLink to="/practice-areas/corporate-law" @click="closeMobileMenu">قانون الشركات</NuxtLink></li>
-                <li><NuxtLink to="/practice-areas/personal-status" @click="closeMobileMenu">الأحوال الشخصية</NuxtLink></li>
-                <li><NuxtLink to="/practice-areas/financial-disputes" @click="closeMobileMenu">المنازعات المالية</NuxtLink></li>
-              </ul>
-            </li>
-            <li class="mobile-accordion-group">
-              <div class="mobile-accordion-head" @click="mobileServicesOpen = !mobileServicesOpen">
-                <span>خدماتنا القانونية</span>
-                <span class="acc-arrow" :class="{ rotate: mobileServicesOpen }">▾</span>
-              </div>
-              <ul v-show="mobileServicesOpen" class="mobile-sublinks">
-                <li><NuxtLink to="/services/consultation" @click="closeMobileMenu">الاستشارات القانونية</NuxtLink></li>
-                <li><NuxtLink to="/services/contracts" @click="closeMobileMenu">صياغة ومراجعة العقود</NuxtLink></li>
-                <li><NuxtLink to="/services/disputes" @click="closeMobileMenu">إدارة المنازعات</NuxtLink></li>
-                <li><NuxtLink to="/services/representation" @click="closeMobileMenu">التمثيل القانوني</NuxtLink></li>
-                <li><NuxtLink to="/services/corporate-support" @click="closeMobileMenu">الدعم القانوني للشركات</NuxtLink></li>
-              </ul>
-            </li>
-            <li>
-              <NuxtLink to="/corporate" class="mobile-link" @click="closeMobileMenu">
-                للشركات والمؤسسات
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/individuals" class="mobile-link" @click="closeMobileMenu">
-                للأفراد
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink to="/contact" class="mobile-link" @click="closeMobileMenu">
-                تواصل معنا
-              </NuxtLink>
-            </li>
-          </ul>
-
-          <div class="drawer-actions">
-            <NuxtLink to="/contact" class="btn btn-primary w-full" @click="closeMobileMenu">
-              احجز استشارة قانونية
-            </NuxtLink>
+      <transition name="drawer">
+        <aside
+          v-if="isMobileMenuOpen"
+          class="mobile-drawer"
+          aria-label="قائمة الهاتف"
+        >
+          <div class="drawer-header">
+            <AppLogo theme="dark" :size="44" />
+            <button class="drawer-close-btn" @click="closeMobileMenu" aria-label="إغلاق القائمة">
+              <X :size="22" :stroke-width="2" />
+            </button>
           </div>
-        </nav>
-      </aside>
-    </transition>
+
+          <nav class="mobile-nav">
+            <ul class="mobile-nav-list">
+              <li>
+                <NuxtLink to="/" class="mobile-link" @click="closeMobileMenu">
+                  الرئيسية
+                </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/about" class="mobile-link" @click="closeMobileMenu">
+                  من نحن
+                </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/methodology" class="mobile-link" @click="closeMobileMenu">
+                  منهجنا في العمل
+                </NuxtLink>
+              </li>
+              <li class="mobile-accordion-group">
+                <div class="mobile-accordion-head" @click="mobilePracticeOpen = !mobilePracticeOpen">
+                  <span>مجالات العمل</span>
+                  <span class="acc-arrow" :class="{ rotate: mobilePracticeOpen }">▾</span>
+                </div>
+                <ul v-show="mobilePracticeOpen" class="mobile-sublinks">
+                  <li><NuxtLink to="/practice-areas/civil" @click="closeMobileMenu">القانون المدني</NuxtLink></li>
+                  <li><NuxtLink to="/practice-areas/commercial" @click="closeMobileMenu">القانون التجاري</NuxtLink></li>
+                  <li><NuxtLink to="/practice-areas/corporate-law" @click="closeMobileMenu">قانون الشركات</NuxtLink></li>
+                  <li><NuxtLink to="/practice-areas/personal-status" @click="closeMobileMenu">الأحوال الشخصية</NuxtLink></li>
+                  <li><NuxtLink to="/practice-areas/financial-disputes" @click="closeMobileMenu">المنازعات المالية</NuxtLink></li>
+                </ul>
+              </li>
+              <li class="mobile-accordion-group">
+                <div class="mobile-accordion-head" @click="mobileServicesOpen = !mobileServicesOpen">
+                  <span>خدماتنا القانونية</span>
+                  <span class="acc-arrow" :class="{ rotate: mobileServicesOpen }">▾</span>
+                </div>
+                <ul v-show="mobileServicesOpen" class="mobile-sublinks">
+                  <li><NuxtLink to="/services/consultation" @click="closeMobileMenu">الاستشارات القانونية</NuxtLink></li>
+                  <li><NuxtLink to="/services/contracts" @click="closeMobileMenu">صياغة ومراجعة العقود</NuxtLink></li>
+                  <li><NuxtLink to="/services/disputes" @click="closeMobileMenu">إدارة المنازعات</NuxtLink></li>
+                  <li><NuxtLink to="/services/representation" @click="closeMobileMenu">التمثيل القانوني</NuxtLink></li>
+                  <li><NuxtLink to="/services/corporate-support" @click="closeMobileMenu">الدعم القانوني للشركات</NuxtLink></li>
+                </ul>
+              </li>
+              <li>
+                <NuxtLink to="/corporate" class="mobile-link" @click="closeMobileMenu">
+                  للشركات والمؤسسات
+                </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/individuals" class="mobile-link" @click="closeMobileMenu">
+                  للأفراد
+                </NuxtLink>
+              </li>
+              <li>
+                <NuxtLink to="/contact" class="mobile-link" @click="closeMobileMenu">
+                  تواصل معنا
+                </NuxtLink>
+              </li>
+            </ul>
+
+            <div class="drawer-actions">
+              <NuxtLink to="/contact" class="btn btn-primary w-full" @click="closeMobileMenu">
+                احجز استشارة قانونية
+              </NuxtLink>
+            </div>
+          </nav>
+        </aside>
+      </transition>
+    </Teleport>
   </header>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, onUnmounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted, watch } from 'vue'
 import { ChevronDown, X } from 'lucide-vue-next'
 
 const route = useRoute()
@@ -233,6 +235,13 @@ const closeMobileMenu = () => {
   isMobileMenuOpen.value = false
   document.body.style.overflow = ''
 }
+
+watch(
+  () => route.fullPath,
+  () => {
+    closeMobileMenu()
+  }
+)
 
 onMounted(() => {
   window.addEventListener('scroll', handleScroll, { passive: true })
@@ -440,9 +449,13 @@ onUnmounted(() => {
 .mobile-backdrop {
   position: fixed;
   inset: 0;
-  background: rgba(10, 15, 25, 0.7);
-  backdrop-filter: blur(4px);
-  z-index: 1100;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: rgba(10, 15, 25, 0.75);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 9998;
 }
 
 .mobile-drawer {
@@ -450,16 +463,23 @@ onUnmounted(() => {
   top: 0;
   right: 0;
   bottom: 0;
-  width: 310px;
+  width: 320px;
   max-width: 86vw;
+  height: 100vh;
+  height: 100dvh;
   background: #141E30;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: -10px 0 35px rgba(0, 0, 0, 0.5);
-  z-index: 1200;
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.6);
+  z-index: 9999;
   display: flex;
   flex-direction: column;
   padding: 1.5rem;
+  padding-top: max(1.5rem, env(safe-area-inset-top));
+  padding-bottom: max(2rem, env(safe-area-inset-bottom));
+  padding-right: max(1.5rem, env(safe-area-inset-right));
+  padding-left: max(1.5rem, env(safe-area-inset-left));
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .drawer-header {
@@ -473,17 +493,21 @@ onUnmounted(() => {
 
 .drawer-close-btn {
   color: var(--color-silver);
-  padding: 0.4rem;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  cursor: pointer;
+  transition: all var(--transition-fast);
 }
 
 .drawer-close-btn:hover {
   color: var(--color-white);
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 .mobile-nav-list {

@@ -401,4 +401,20 @@ useHead(() => ({
 }
 
 .w-full { width: 100%; }
+
+@media (max-width: 991px) {
+  .service-layout-grid {
+    gap: 2.25rem;
+  }
+
+  .service-sidebar {
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+
+  .sidebar-card,
+  .sidebar-contact-card {
+    padding: 1.35rem 1.25rem;
+  }
+}
 </style>
