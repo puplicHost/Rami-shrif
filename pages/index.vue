@@ -687,37 +687,35 @@ const toggleAccordion = (index) => {
 
 /* 2. About Section — من نحن */
 .about-section {
-  background-color: #F5F0E8; /* cream */
-  padding: clamp(60px, 8vw, 100px) 0;
+  background-color: #F7F3EC; /* Exact warm cream from screenshot */
+  padding: clamp(48px, 6vw, 90px) 0;
   border-bottom: 1px solid var(--color-cream-border);
 }
 
 .about-card-container {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: stretch;
   justify-content: center;
-  gap: clamp(24px, 4.5vw, 56px);
-  max-width: 1080px;
+  gap: clamp(20px, 3.5vw, 48px);
+  max-width: 1040px;
   margin: 0 auto;
 }
 
 .about-photo-wrapper {
   flex-shrink: 0;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: stretch;
 }
 
 .about-photo-img {
-  width: clamp(140px, 26vw, 340px);
-  aspect-ratio: 4 / 5;
-  height: auto;
+  width: clamp(145px, 26vw, 320px);
+  height: 100%;
+  min-height: 250px;
   object-fit: cover;
-  object-position: center 15%;
-  border-radius: clamp(16px, 2.5vw, 24px);
-  box-shadow: 0 12px 36px rgba(28, 41, 64, 0.14);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  object-position: center 20%;
+  border-radius: clamp(16px, 2vw, 22px);
+  box-shadow: 0 10px 30px rgba(28, 41, 64, 0.12);
 }
 
 .about-text-content {
@@ -725,37 +723,38 @@ const toggleAccordion = (index) => {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
   text-align: right;
-  max-width: 580px;
+  max-width: 560px;
 }
 
 .about-badge-line {
   display: inline-flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 10px;
-  margin-bottom: 14px;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
 .badge-dash {
-  width: 20px;
+  width: 16px;
   height: 1.5px;
-  background-color: #8C584E;
-  opacity: 0.85;
+  background-color: #9B7068;
+  opacity: 0.8;
 }
 
 .badge-dash-long {
-  width: 50px;
+  width: 48px;
   height: 1.5px;
-  background: linear-gradient(to left, #8C584E, transparent);
-  opacity: 0.85;
+  background: linear-gradient(to left, #9B7068, transparent);
+  opacity: 0.8;
 }
 
 .badge-title {
   font-family: var(--font-body);
-  font-size: clamp(0.95rem, 1.2vw, 1.1rem);
+  font-size: 0.95rem;
   font-weight: 600;
-  color: #7A4237;
+  color: #8C5A52; /* warm brown */
   letter-spacing: normal;
   white-space: nowrap;
 }
@@ -765,8 +764,8 @@ const toggleAccordion = (index) => {
   font-size: clamp(1.85rem, 3.4vw, 2.75rem);
   font-weight: 800;
   line-height: 1.25;
-  color: #1C2940;
-  margin-bottom: 20px;
+  color: #162740; /* deep rich solid navy from image */
+  margin-bottom: 16px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -777,10 +776,10 @@ const toggleAccordion = (index) => {
 
 .about-description {
   font-family: var(--font-body);
-  font-size: clamp(0.92rem, 1.2vw, 1.05rem);
+  font-size: 1rem;
   font-weight: 500;
-  line-height: 1.9;
-  color: #1C2940;
+  line-height: 1.85;
+  color: #37475B; /* softer dark slate navy from image */
   margin: 0;
   text-align: right;
   width: 100%;
@@ -788,55 +787,64 @@ const toggleAccordion = (index) => {
 
 @media (max-width: 768px) {
   .about-section {
-    padding: clamp(40px, 8vw, 60px) 12px;
+    padding: 32px 14px;
   }
 
   .about-card-container {
-    flex-direction: row; /* maintains row on mobile */
+    flex-direction: row;
     gap: 14px;
-    align-items: center;
+    align-items: stretch;
   }
 
   .about-photo-img {
-    width: clamp(120px, 35vw, 160px);
-    border-radius: 14px;
+    width: clamp(130px, 37vw, 155px);
+    height: 100%;
+    min-height: 245px;
+    border-radius: 16px;
+    object-position: center 20%;
   }
 
   .about-text-content {
     align-items: flex-start;
     text-align: right;
+    justify-content: center;
   }
 
   .about-badge-line {
-    gap: 8px;
-    margin-bottom: 8px;
+    gap: 6px;
+    margin-bottom: 6px;
     justify-content: flex-start;
   }
 
   .badge-dash {
-    width: 14px;
+    width: 12px;
   }
 
   .badge-dash-long {
-    width: 32px;
+    width: 28px;
   }
 
   .badge-title {
-    font-size: 0.82rem;
+    font-size: 0.8rem;
+    color: #8C5A52;
   }
 
   .about-main-title {
-    font-size: clamp(1.15rem, 4.2vw, 1.55rem);
-    margin-bottom: 10px;
+    font-size: clamp(1.28rem, 4.4vw, 1.48rem);
+    line-height: 1.22;
+    color: #162740;
+    margin-bottom: 8px;
     align-items: flex-start;
     text-align: right;
     gap: 0;
   }
 
   .about-description {
-    font-size: clamp(0.72rem, 2.4vw, 0.85rem);
-    line-height: 1.68;
+    font-size: clamp(10.5px, 2.75vw, 12px);
+    line-height: 1.72;
+    color: #37475B;
     text-align: right;
+    font-weight: 500;
   }
 
   .hidden-xs {
