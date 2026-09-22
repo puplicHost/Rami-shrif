@@ -4,7 +4,7 @@
     <section class="page-hero bg-navy">
       <div class="container page-hero-container">
         <div class="breadcrumb-trail">
-          <router-link to="/">الرئيسية</router-link>
+          <NuxtLink to="/">الرئيسية</NuxtLink>
           <span class="sep">/</span>
           <span>مجالات العمل</span>
           <span class="sep">/</span>
@@ -28,7 +28,7 @@
               {{ currentArea.body }}
             </p>
 
-            <div class="area-details-block">
+            <div class="area-details-block" v-if="currentArea.coverage">
               <h3 class="h3-title mb-4 text-navy">نطاق التغطية والخدمات في هذا المجال</h3>
               <ul class="coverage-list">
                 <li v-for="(item, idx) in currentArea.coverage" :key="idx">
@@ -42,7 +42,7 @@
             </div>
 
             <!-- Approach box -->
-            <div class="area-approach-box">
+            <div class="area-approach-box" v-if="currentArea.approach">
               <h4 class="approach-title">نهجنا في معالجة قضايا {{ currentArea.title }}</h4>
               <p class="approach-text">
                 {{ currentArea.approach }}
@@ -55,9 +55,9 @@
                 <h4 class="banner-prompt">هل لديك استفسار أو قضية متعلقة بـ {{ currentArea.title }}؟</h4>
                 <p class="banner-subtext">تواصل معنا لمناقشة التفاصيل وتحديد المركز القانوني والخيارات المتاحة.</p>
               </div>
-              <router-link to="/contact" class="btn btn-primary">
+              <NuxtLink to="/contact" class="btn btn-primary">
                 احجز استشارة متخصصة
-              </router-link>
+              </NuxtLink>
             </div>
           </div>
 
@@ -67,14 +67,14 @@
               <h3 class="sidebar-heading">كافة مجالات العمل</h3>
               <ul class="sidebar-nav-list">
                 <li v-for="(area, slug) in practiceAreas" :key="slug">
-                  <router-link
+                  <NuxtLink
                     :to="`/practice-areas/${slug}`"
                     class="sidebar-nav-link"
                     :class="{ 'is-current': slug === currentSlug }"
                   >
                     <span>{{ area.title }}</span>
                     <span class="sidebar-arrow">←</span>
-                  </router-link>
+                  </NuxtLink>
                 </li>
               </ul>
             </div>
@@ -84,9 +84,9 @@
               <p class="contact-card-text">
                 فريقنا متاح لدراسة ملفاتك وتقديم التقييم الأنسب.
               </p>
-              <router-link to="/contact" class="btn btn-secondary-light btn-sm w-full">
+              <NuxtLink to="/contact" class="btn btn-secondary-light btn-sm w-full">
                 تواصل مع مستشار
-              </router-link>
+              </NuxtLink>
             </div>
           </aside>
         </div>
@@ -97,118 +97,21 @@
 
 <script setup>
 import { computed } from 'vue'
-import { useRoute } from 'vue-router'
-import SectionLabel from '@/components/ui/SectionLabel.vue'
 
 const route = useRoute()
+const practiceAreas = usePracticeAreas()
 
-const practiceAreas = {
-  civil: {
-    title: 'القانون المدني',
-    headline: 'المنازعات والحقوق المدنية',
-    body: 'التعامل مع المنازعات والموضوعات المدنية، ودراسة الحقوق والالتزامات والمراكز القانونية للأطراف وفق طبيعة كل نزاع.',
-    coverage: [
-      {
-        title: 'دعاوى العقود والالتزامات المدنية',
-        desc: 'دراسة الإخلال بالبنود العقدية، المطالبة بالفسخ أو التنفيذ العيني، وتقدير التعويضات الجابرة للضرر.'
-      },
-      {
-        title: 'المنازعات العقارية والملكية',
-        desc: 'قضايا تثبيت الملكية، صحة ونفاذ عقود البيع، دعاوى الفرز والتجنيب، والتعامل مع نزاعات الإيجارات.'
-      },
-      {
-        title: 'المسؤولية المدنية والتعويضات',
-        desc: 'المطالبة بالتعويضات عن الأضرار المادية والمعنوية الناشئة عن الأفعال الضارة أو التقصيرية.'
-      }
-    ],
-    approach: 'نبدأ بالتدقيق في السندات والعقود المبرمة، وقياس سلامتها الشكلية والموضوعية، مع استكشاف إمكانيات التسوية الرضائية قبل الولوج في إجراءات التقاضي.'
-  },
-  commercial: {
-    title: 'القانون التجاري',
-    headline: 'الدعم القانوني في المعاملات التجارية',
-    body: 'تقديم الدعم القانوني في المنازعات والمعاملات التجارية، ودراسة المراكز القانونية والالتزامات المرتبطة بالنشاط التجاري.',
-    coverage: [
-      {
-        title: 'الأوراق التجارية والمصرفية',
-        desc: 'منازعات الشيكات، الكمبيالات، السندات الإذنية، والاعتمادات المستندية المصرفية.'
-      },
-      {
-        title: 'الوكالات التجارية والامتياز (Franchise)',
-        desc: 'صياغة ومراجعة عقود التوزيع الحصري، تنظيم حقوق الوكلاء، وفض منازعات إنهاء الوكالة.'
-      },
-      {
-        title: 'التحكيم التجاري وتسوية النزاعات',
-        desc: 'تمثيل الأطراف في إجراءات التحكيم المحلي والدولي وصياغة مشارطات التحكيم.'
-      }
-    ],
-    approach: 'نضع سرعة دوران رأس المال وحماية سمعة التاجر في مقدمة أولوياتنا، ونعتمد حلولاً تحافظ على العلاقات التجارية واستقرار العمليات.'
-  },
-  'corporate-law': {
-    title: 'قانون الشركات',
-    headline: 'الخدمات القانونية للشركات',
-    body: 'تقديم الخدمات القانونية المرتبطة بالشركات ومعاملاتها، ومراجعة وصياغة العقود والمستندات، ودراسة المراكز القانونية والتعامل مع النزاعات.',
-    coverage: [
-      {
-        title: 'تأسيس وهيكلة الشركات',
-        desc: 'اختيار الشكل القانوني الأمثل، صياغة عقود التأسيس والأنظمة الأساسية، واستخراج التراخيص اللازمة.'
-      },
-      {
-        title: 'حوكمة الشركات وقرارات الإدارة',
-        desc: 'تنظيم اجتماعات الجمعيات العامة العادية وغير العادية ومجالس الإدارة وتوثيق قراراتها رسمياً.'
-      },
-      {
-        title: 'عمليات الاندماج والاستحواذ وتصفية الشركات',
-        desc: 'إجراء الفحص النافي للجهالة قانونياً، صياغة اتفاقيات نقل الملكية، وإجراءات التصفية النظامية.'
-      }
-    ],
-    approach: 'نعمل كذراع قانوني استراتيجي للإدارة، نرافق الشركة في مراحل نموها وتوسعها ونوفر لها الحماية التعاقدية الشاملة.'
-  },
-  'personal-status': {
-    title: 'الأحوال الشخصية',
-    headline: 'مسائل الأحوال الشخصية',
-    body: 'تقديم الخدمات القانونية في مسائل الأحوال الشخصية، من خلال دراسة الوقائع والمستندات وتقييم الموقف القانوني وفق ظروف كل حالة.',
-    coverage: [
-      {
-        title: 'التركات وتوزيع المواريث',
-        desc: 'إعلام الوراثة، توثيق وحصر التركات، صياغة اتفاقات القسمة الرضائية، ودعاوى قسمة التركات الجبرية.'
-      },
-      {
-        title: 'النفقات والحضانة والرؤية',
-        desc: 'الدعاوى المتعلقة بنفقات الزوجية والأولاد، وتحديد حقوق الحضانة وأماكن استضافتهم ورعايتهم.'
-      },
-      {
-        title: 'دعاوى إنهاء العلاقة الزوجية',
-        desc: 'الطلاق للضرر، الخلع، والإبراء، مع الحفاظ على الكرامة وسرية الأسرار الأسرية.'
-      }
-    ],
-    approach: 'نتعامل مع قضايا الأحوال الشخصية بحكمة وحرص بالغ على حفظ الروابط الأسرية وحماية مصالح الأطفال، مع الالتزام التام بأعلى معايير الخصوصية.'
-  },
-  'financial-disputes': {
-    title: 'المنازعات المالية',
-    headline: 'دراسة المنازعات ذات الطابع المالي',
-    body: 'دراسة المنازعات ذات الطابع المالي، وتحليل المستندات والالتزامات والمراكز القانونية للأطراف، وتحديد المسار القانوني المناسب.',
-    coverage: [
-      {
-        title: 'تحصيل الديون والمطالبات المالية المتعثرة',
-        desc: 'اتخاذ الإجراءات التحفظية والتنفيذية لضمان استرداد أموال الدائنين وحجز ما للمدين لدى الغير.'
-      },
-      {
-        title: 'منازعات عقود التمويل والتأجير التمويلي',
-        desc: 'تسوية الخلافات الناشئة عن جداول السداد، غرامات التأخير، وفسخ العقود التمويلية.'
-      },
-      {
-        title: 'إعادة الهيكلة المالية والجدولة',
-        desc: 'التفاوض مع البنوك والمؤسسات المالية لإعادة جدولة الالتزامات بما يضمن استمرارية النشاط.'
-      }
-    ],
-    approach: 'نقوم بتحليل الجدوى الاقتصادية لكل إجراء قبل اتخاذه، بهدف استرداد الحقوق المالية بأعلى عائد وأقل تكلفة قضائية ممكنة.'
-  }
-}
-
-const currentSlug = computed(() => route.params.slug || 'civil')
+const currentSlug = computed(() => String(route.params.slug || 'civil'))
 const currentArea = computed(() => {
   return practiceAreas[currentSlug.value] || practiceAreas.civil
 })
+
+useHead(() => ({
+  title: `${currentArea.value.title} | مؤسسة رامي شريف للمحاماة`,
+  meta: [
+    { name: 'description', content: currentArea.value.headline || currentArea.value.body }
+  ]
+}))
 </script>
 
 <style scoped>

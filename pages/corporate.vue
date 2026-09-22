@@ -18,9 +18,9 @@
           العمل القانوني مع الشركات لا يتطلب المعرفة القانونية فحسب، بل يستلزم فهم طبيعة النشاط والتحديات المرتبطة به وسرعة حركة السوق.
         </p>
         <div class="hero-actions">
-          <router-link to="/contact" class="btn btn-primary">
+          <NuxtLink to="/contact" class="btn btn-primary">
             طلب عرض خدمات للشركات
-          </router-link>
+          </NuxtLink>
         </div>
       </div>
     </section>
@@ -141,9 +141,9 @@
               <h3 class="banner-title">هل ترغب في تأسيس شراكة قانونية مستدامة لشركتك؟</h3>
               <p class="banner-sub">حدد موعداً لمناقشة احتياجات مؤسستك وحجم أعمالك واقتراح باقة الخدمات المناسبة.</p>
             </div>
-            <router-link to="/contact" class="btn btn-primary">
+            <NuxtLink to="/contact" class="btn btn-primary">
               طلب اجتماع استشاري
-            </router-link>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -152,7 +152,9 @@
 </template>
 
 <script setup>
-import SectionLabel from '@/components/ui/SectionLabel.vue'
+useHead({
+  title: 'للشركات والمؤسسات | مؤسسة رامي شريف للمحاماة'
+})
 
 const sectors = [
   {

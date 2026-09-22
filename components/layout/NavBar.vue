@@ -15,74 +15,74 @@
       <nav class="desktop-nav" aria-label="التنقل الرئيسي">
         <ul class="nav-links">
           <li>
-            <router-link to="/" class="nav-link" exact-active-class="active">
+            <NuxtLink to="/" class="nav-link" exact-active-class="active">
               الرئيسية
-            </router-link>
+            </NuxtLink>
           </li>
           <li>
-            <router-link to="/about" class="nav-link" active-class="active">
+            <NuxtLink to="/about" class="nav-link" active-class="active">
               من نحن
-            </router-link>
+            </NuxtLink>
           </li>
           <li>
-            <router-link to="/methodology" class="nav-link" active-class="active">
+            <NuxtLink to="/methodology" class="nav-link" active-class="active">
               منهجنا
-            </router-link>
+            </NuxtLink>
           </li>
           
           <!-- Dropdown or Direct Link for Practice Areas -->
           <li class="has-dropdown" @mouseenter="showPracticeMenu = true" @mouseleave="showPracticeMenu = false">
-            <router-link to="/practice-areas/civil" class="nav-link dropdown-toggle" :class="{ active: isPracticeRoute }">
+            <NuxtLink to="/practice-areas/civil" class="nav-link dropdown-toggle" :class="{ active: isPracticeRoute }">
               مجالات العمل
               <ChevronDown :size="14" class="dropdown-chevron" />
-            </router-link>
+            </NuxtLink>
             <div class="dropdown-menu" v-show="showPracticeMenu">
-              <router-link to="/practice-areas/civil" class="dropdown-item">القانون المدني</router-link>
-              <router-link to="/practice-areas/commercial" class="dropdown-item">القانون التجاري</router-link>
-              <router-link to="/practice-areas/corporate-law" class="dropdown-item">قانون الشركات</router-link>
-              <router-link to="/practice-areas/personal-status" class="dropdown-item">الأحوال الشخصية</router-link>
-              <router-link to="/practice-areas/financial-disputes" class="dropdown-item">المنازعات المالية</router-link>
+              <NuxtLink to="/practice-areas/civil" class="dropdown-item">القانون المدني</NuxtLink>
+              <NuxtLink to="/practice-areas/commercial" class="dropdown-item">القانون التجاري</NuxtLink>
+              <NuxtLink to="/practice-areas/corporate-law" class="dropdown-item">قانون الشركات</NuxtLink>
+              <NuxtLink to="/practice-areas/personal-status" class="dropdown-item">الأحوال الشخصية</NuxtLink>
+              <NuxtLink to="/practice-areas/financial-disputes" class="dropdown-item">المنازعات المالية</NuxtLink>
             </div>
           </li>
 
           <!-- Dropdown or Direct Link for Services -->
           <li class="has-dropdown" @mouseenter="showServicesMenu = true" @mouseleave="showServicesMenu = false">
-            <router-link to="/services/consultation" class="nav-link dropdown-toggle" :class="{ active: isServiceRoute }">
+            <NuxtLink to="/services/consultation" class="nav-link dropdown-toggle" :class="{ active: isServiceRoute }">
               خدماتنا
               <ChevronDown :size="14" class="dropdown-chevron" />
-            </router-link>
+            </NuxtLink>
             <div class="dropdown-menu" v-show="showServicesMenu">
-              <router-link to="/services/consultation" class="dropdown-item">الاستشارات القانونية</router-link>
-              <router-link to="/services/contracts" class="dropdown-item">صياغة ومراجعة العقود</router-link>
-              <router-link to="/services/disputes" class="dropdown-item">إدارة المنازعات</router-link>
-              <router-link to="/services/representation" class="dropdown-item">التمثيل القانوني</router-link>
-              <router-link to="/services/corporate-support" class="dropdown-item">الدعم القانوني للشركات</router-link>
+              <NuxtLink to="/services/consultation" class="dropdown-item">الاستشارات القانونية</NuxtLink>
+              <NuxtLink to="/services/contracts" class="dropdown-item">صياغة ومراجعة العقود</NuxtLink>
+              <NuxtLink to="/services/disputes" class="dropdown-item">إدارة المنازعات</NuxtLink>
+              <NuxtLink to="/services/representation" class="dropdown-item">التمثيل القانوني</NuxtLink>
+              <NuxtLink to="/services/corporate-support" class="dropdown-item">الدعم القانوني للشركات</NuxtLink>
             </div>
           </li>
 
           <li>
-            <router-link to="/corporate" class="nav-link" active-class="active">
+            <NuxtLink to="/corporate" class="nav-link" active-class="active">
               للشركات
-            </router-link>
+            </NuxtLink>
           </li>
           <li>
-            <router-link to="/individuals" class="nav-link" active-class="active">
+            <NuxtLink to="/individuals" class="nav-link" active-class="active">
               للأفراد
-            </router-link>
+            </NuxtLink>
           </li>
           <li>
-            <router-link to="/contact" class="nav-link" active-class="active">
+            <NuxtLink to="/contact" class="nav-link" active-class="active">
               تواصل معنا
-            </router-link>
+            </NuxtLink>
           </li>
         </ul>
       </nav>
 
       <!-- Desktop Action CTA -->
       <div class="navbar-actions">
-        <router-link to="/contact" class="btn btn-primary nav-cta">
+        <NuxtLink to="/contact" class="btn btn-primary nav-cta">
           احجز استشارة
-        </router-link>
+        </NuxtLink>
 
         <!-- Mobile Hamburger Button -->
         <button
@@ -123,19 +123,19 @@
         <nav class="mobile-nav">
           <ul class="mobile-nav-list">
             <li>
-              <router-link to="/" class="mobile-link" @click="closeMobileMenu">
+              <NuxtLink to="/" class="mobile-link" @click="closeMobileMenu">
                 الرئيسية
-              </router-link>
+              </NuxtLink>
             </li>
             <li>
-              <router-link to="/about" class="mobile-link" @click="closeMobileMenu">
+              <NuxtLink to="/about" class="mobile-link" @click="closeMobileMenu">
                 من نحن
-              </router-link>
+              </NuxtLink>
             </li>
             <li>
-              <router-link to="/methodology" class="mobile-link" @click="closeMobileMenu">
+              <NuxtLink to="/methodology" class="mobile-link" @click="closeMobileMenu">
                 منهجنا في العمل
-              </router-link>
+              </NuxtLink>
             </li>
             <li class="mobile-accordion-group">
               <div class="mobile-accordion-head" @click="mobilePracticeOpen = !mobilePracticeOpen">
@@ -143,11 +143,11 @@
                 <span class="acc-arrow" :class="{ rotate: mobilePracticeOpen }">▾</span>
               </div>
               <ul v-show="mobilePracticeOpen" class="mobile-sublinks">
-                <li><router-link to="/practice-areas/civil" @click="closeMobileMenu">القانون المدني</router-link></li>
-                <li><router-link to="/practice-areas/commercial" @click="closeMobileMenu">القانون التجاري</router-link></li>
-                <li><router-link to="/practice-areas/corporate-law" @click="closeMobileMenu">قانون الشركات</router-link></li>
-                <li><router-link to="/practice-areas/personal-status" @click="closeMobileMenu">الأحوال الشخصية</router-link></li>
-                <li><router-link to="/practice-areas/financial-disputes" @click="closeMobileMenu">المنازعات المالية</router-link></li>
+                <li><NuxtLink to="/practice-areas/civil" @click="closeMobileMenu">القانون المدني</NuxtLink></li>
+                <li><NuxtLink to="/practice-areas/commercial" @click="closeMobileMenu">القانون التجاري</NuxtLink></li>
+                <li><NuxtLink to="/practice-areas/corporate-law" @click="closeMobileMenu">قانون الشركات</NuxtLink></li>
+                <li><NuxtLink to="/practice-areas/personal-status" @click="closeMobileMenu">الأحوال الشخصية</NuxtLink></li>
+                <li><NuxtLink to="/practice-areas/financial-disputes" @click="closeMobileMenu">المنازعات المالية</NuxtLink></li>
               </ul>
             </li>
             <li class="mobile-accordion-group">
@@ -156,34 +156,34 @@
                 <span class="acc-arrow" :class="{ rotate: mobileServicesOpen }">▾</span>
               </div>
               <ul v-show="mobileServicesOpen" class="mobile-sublinks">
-                <li><router-link to="/services/consultation" @click="closeMobileMenu">الاستشارات القانونية</router-link></li>
-                <li><router-link to="/services/contracts" @click="closeMobileMenu">صياغة ومراجعة العقود</router-link></li>
-                <li><router-link to="/services/disputes" @click="closeMobileMenu">إدارة المنازعات</router-link></li>
-                <li><router-link to="/services/representation" @click="closeMobileMenu">التمثيل القانوني</router-link></li>
-                <li><router-link to="/services/corporate-support" @click="closeMobileMenu">الدعم القانوني للشركات</router-link></li>
+                <li><NuxtLink to="/services/consultation" @click="closeMobileMenu">الاستشارات القانونية</NuxtLink></li>
+                <li><NuxtLink to="/services/contracts" @click="closeMobileMenu">صياغة ومراجعة العقود</NuxtLink></li>
+                <li><NuxtLink to="/services/disputes" @click="closeMobileMenu">إدارة المنازعات</NuxtLink></li>
+                <li><NuxtLink to="/services/representation" @click="closeMobileMenu">التمثيل القانوني</NuxtLink></li>
+                <li><NuxtLink to="/services/corporate-support" @click="closeMobileMenu">الدعم القانوني للشركات</NuxtLink></li>
               </ul>
             </li>
             <li>
-              <router-link to="/corporate" class="mobile-link" @click="closeMobileMenu">
+              <NuxtLink to="/corporate" class="mobile-link" @click="closeMobileMenu">
                 للشركات والمؤسسات
-              </router-link>
+              </NuxtLink>
             </li>
             <li>
-              <router-link to="/individuals" class="mobile-link" @click="closeMobileMenu">
+              <NuxtLink to="/individuals" class="mobile-link" @click="closeMobileMenu">
                 للأفراد
-              </router-link>
+              </NuxtLink>
             </li>
             <li>
-              <router-link to="/contact" class="mobile-link" @click="closeMobileMenu">
+              <NuxtLink to="/contact" class="mobile-link" @click="closeMobileMenu">
                 تواصل معنا
-              </router-link>
+              </NuxtLink>
             </li>
           </ul>
 
           <div class="drawer-actions">
-            <router-link to="/contact" class="btn btn-primary w-full" @click="closeMobileMenu">
+            <NuxtLink to="/contact" class="btn btn-primary w-full" @click="closeMobileMenu">
               احجز استشارة قانونية
-            </router-link>
+            </NuxtLink>
           </div>
         </nav>
       </aside>
@@ -193,9 +193,7 @@
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
-import { useRoute } from 'vue-router'
 import { ChevronDown, X } from 'lucide-vue-next'
-import AppLogo from '@/components/ui/AppLogo.vue'
 
 const route = useRoute()
 const isScrolled = ref(false)

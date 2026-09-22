@@ -92,16 +92,18 @@
         <p class="body-lead mb-6 text-silver max-w-2xl mx-auto">
           احجز جلسة استشارة مع مستشارينا، لنستمع إلى تفاصيل ملفك ونحدد معك المسار القانوني الأنسب.
         </p>
-        <router-link to="/contact" class="btn btn-primary">
+        <NuxtLink to="/contact" class="btn btn-primary">
           تحدث معنا حول ملفك
-        </router-link>
+        </NuxtLink>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-import SectionLabel from '@/components/ui/SectionLabel.vue'
+useHead({
+  title: 'للأفراد | مؤسسة رامي شريف للمحاماة'
+})
 
 const individualServices = [
   {

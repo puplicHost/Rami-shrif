@@ -1,5 +1,5 @@
 <template>
-  <router-link
+  <NuxtLink
     :to="`/practice-areas/${slug}`"
     class="practice-card"
     :class="{ 'full-width-mobile': isFullWidthMobile }"
@@ -19,7 +19,7 @@
       <span class="read-more-text">تفاصيل المجال</span>
       <span class="card-arrow" aria-hidden="true">←</span>
     </div>
-  </router-link>
+  </NuxtLink>
 </template>
 
 <script setup>

@@ -198,7 +198,10 @@ import {
   Clock,
   MapPin
 } from 'lucide-vue-next'
-import SectionLabel from '@/components/ui/SectionLabel.vue'
+
+useHead({
+  title: 'تواصل معنا | مؤسسة رامي شريف للمحاماة'
+})
 
 const form = reactive({
   name: '',

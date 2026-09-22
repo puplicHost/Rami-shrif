@@ -17,12 +17,12 @@
         <div class="footer-links-col">
           <h4 class="footer-heading">التنقل السريع</h4>
           <ul class="footer-list">
-            <li><router-link to="/">الرئيسية</router-link></li>
-            <li><router-link to="/about">من نحن ورؤيتنا</router-link></li>
-            <li><router-link to="/methodology">منهجنا في العمل</router-link></li>
-            <li><router-link to="/corporate">للشركات والمؤسسات</router-link></li>
-            <li><router-link to="/individuals">للأفراد</router-link></li>
-            <li><router-link to="/contact">تواصل معنا</router-link></li>
+            <li><NuxtLink to="/">الرئيسية</NuxtLink></li>
+            <li><NuxtLink to="/about">من نحن ورؤيتنا</NuxtLink></li>
+            <li><NuxtLink to="/methodology">منهجنا في العمل</NuxtLink></li>
+            <li><NuxtLink to="/corporate">للشركات والمؤسسات</NuxtLink></li>
+            <li><NuxtLink to="/individuals">للأفراد</NuxtLink></li>
+            <li><NuxtLink to="/contact">تواصل معنا</NuxtLink></li>
           </ul>
         </div>
 
@@ -30,11 +30,11 @@
         <div class="footer-links-col">
           <h4 class="footer-heading">مجالات العمل</h4>
           <ul class="footer-list">
-            <li><router-link to="/practice-areas/civil">القانون المدني</router-link></li>
-            <li><router-link to="/practice-areas/commercial">القانون التجاري</router-link></li>
-            <li><router-link to="/practice-areas/corporate-law">قانون الشركات</router-link></li>
-            <li><router-link to="/practice-areas/personal-status">الأحوال الشخصية</router-link></li>
-            <li><router-link to="/practice-areas/financial-disputes">المنازعات المالية</router-link></li>
+            <li><NuxtLink to="/practice-areas/civil">القانون المدني</NuxtLink></li>
+            <li><NuxtLink to="/practice-areas/commercial">القانون التجاري</NuxtLink></li>
+            <li><NuxtLink to="/practice-areas/corporate-law">قانون الشركات</NuxtLink></li>
+            <li><NuxtLink to="/practice-areas/personal-status">الأحوال الشخصية</NuxtLink></li>
+            <li><NuxtLink to="/practice-areas/financial-disputes">المنازعات المالية</NuxtLink></li>
           </ul>
         </div>
 
@@ -77,9 +77,9 @@
           </div>
 
           <div class="footer-cta-box">
-            <router-link to="/contact" class="btn btn-primary btn-sm">
+            <NuxtLink to="/contact" class="btn btn-primary btn-sm">
               احجز استشارة قانونية
-            </router-link>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -109,7 +109,6 @@ import {
   Facebook,
   Instagram
 } from 'lucide-vue-next'
-import AppLogo from '@/components/ui/AppLogo.vue'
 
 const currentYear = computed(() => new Date().getFullYear())
 </script>

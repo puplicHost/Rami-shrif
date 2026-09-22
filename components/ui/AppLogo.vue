@@ -1,5 +1,5 @@
 <template>
-  <router-link to="/" class="app-logo" :class="[theme, { 'is-scrolled': isScrolled }]">
+  <NuxtLink to="/" class="app-logo" :class="[theme, { 'is-scrolled': isScrolled }]">
     <div class="logo-icon-wrap" :style="{ width: sizePx + 'px', height: sizePx + 'px' }">
       <img src="/logo.png" alt="رامي شريف للمحاماة" class="logo-img" />
     </div>
@@ -8,7 +8,7 @@
       <span class="firm-name">مؤسسة رامي شريف</span>
       <span class="firm-tagline">للمحاماة والاستشارات القانونية</span>
     </div>
-  </router-link>
+  </NuxtLink>
 </template>
 
 <script setup>

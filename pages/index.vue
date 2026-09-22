@@ -27,15 +27,15 @@
           </p>
 
           <div class="hero-cta-group">
-            <router-link to="/contact" class="btn btn-primary">
+            <NuxtLink to="/contact" class="btn btn-primary">
               احجز استشارة قانونية
               <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
                 <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
               </svg>
-            </router-link>
-            <router-link to="/methodology" class="btn btn-secondary">
+            </NuxtLink>
+            <NuxtLink to="/methodology" class="btn btn-secondary">
               تعرّف على منهجنا
-            </router-link>
+            </NuxtLink>
           </div>
         </div>
 
@@ -116,10 +116,10 @@
         </div>
 
         <div class="steps-action-wrap">
-          <router-link to="/methodology" class="btn btn-secondary">
+          <NuxtLink to="/methodology" class="btn btn-secondary">
             تعرف على منهجنا بالتفصيل
             <span aria-hidden="true">←</span>
-          </router-link>
+          </NuxtLink>
         </div>
       </div>
     </section>
@@ -205,10 +205,10 @@
             العمل القانوني مع الشركات لا يتطلب المعرفة القانونية فحسب، بل يستلزم فهم طبيعة النشاط والتحديات المرتبطة به.
           </p>
           <div class="corporate-cta-wrap">
-            <router-link to="/corporate" class="btn btn-primary">
+            <NuxtLink to="/corporate" class="btn btn-primary">
               اكتشف كيف ندعم الشركات
               <span aria-hidden="true">←</span>
-            </router-link>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -224,10 +224,10 @@
             نقدم للأفراد خدمات المحاماة والاستشارات القانونية من خلال دراسة الحالة وتقييم الموقف القانوني بدقة تحفظ السرية وتصون الحقوق.
           </p>
           <div class="individuals-action">
-            <router-link to="/individuals" class="btn btn-primary">
+            <NuxtLink to="/individuals" class="btn btn-primary">
               تحدث معنا حول ملفك
               <span aria-hidden="true">←</span>
-            </router-link>
+            </NuxtLink>
           </div>
         </div>
 
@@ -261,12 +261,12 @@
             تواصل مع مؤسسة رامي شريف للمحاماة لمناقشة ملفك وتقييم الموقف القانوني وتحديد الخيارات المتاحة.
           </p>
           <div class="final-cta-buttons">
-            <router-link to="/contact" class="btn btn-primary">
+            <NuxtLink to="/contact" class="btn btn-primary">
               احجز استشارة قانونية
-            </router-link>
-            <router-link to="/contact" class="btn btn-secondary">
+            </NuxtLink>
+            <NuxtLink to="/contact" class="btn btn-secondary">
               تواصل معنا
-            </router-link>
+            </NuxtLink>
           </div>
         </div>
       </div>
@@ -283,10 +283,10 @@ import {
   Users,
   DollarSign
 } from 'lucide-vue-next'
-import SectionLabel from '@/components/ui/SectionLabel.vue'
-import PracticeCard from '@/components/ui/PracticeCard.vue'
-import ServiceCard from '@/components/ui/ServiceCard.vue'
-import StepItem from '@/components/ui/StepItem.vue'
+
+useHead({
+  title: 'الرئيسية | مؤسسة رامي شريف للمحاماة'
+})
 
 // 4. The 6 Steps
 const steps = [

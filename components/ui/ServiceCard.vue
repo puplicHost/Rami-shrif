@@ -12,10 +12,10 @@
         <h3 class="service-title">{{ title }}</h3>
       </div>
       <p class="service-summary">{{ summary }}</p>
-      <router-link :to="`/services/${slug}`" class="service-link">
+      <NuxtLink :to="`/services/${slug}`" class="service-link">
         <span>اكتشف المزيد</span>
         <span class="link-arrow" aria-hidden="true">←</span>
-      </router-link>
+      </NuxtLink>
     </div>
 
     <!-- Mobile Accordion Item View -->
@@ -37,10 +37,10 @@
 
       <div class="accordion-content" v-show="isOpen">
         <p class="acc-summary">{{ summary }}</p>
-        <router-link :to="`/services/${slug}`" class="acc-cta-link">
+        <NuxtLink :to="`/services/${slug}`" class="acc-cta-link">
           <span>التفاصيل الكاملة للخدمة</span>
           <span aria-hidden="true">←</span>
-        </router-link>
+        </NuxtLink>
       </div>
     </div>
   </div>

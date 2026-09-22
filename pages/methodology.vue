@@ -73,16 +73,18 @@
         <p class="body-lead mb-6 text-silver max-w-2xl mx-auto">
           فريقنا القانوني مستعد للبدء في دراسة الوقائع وتحليل المستندات لتقديم تقييم موضوعي ومحدد.
         </p>
-        <router-link to="/contact" class="btn btn-primary">
+        <NuxtLink to="/contact" class="btn btn-primary">
           ابدأ استشارتك الآن
-        </router-link>
+        </NuxtLink>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-import SectionLabel from '@/components/ui/SectionLabel.vue'
+useHead({
+  title: 'منهجنا في العمل | مؤسسة رامي شريف للمحاماة'
+})
 
 const stepsDetailed = [
   {

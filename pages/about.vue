@@ -70,16 +70,18 @@
         <p class="body-lead mb-6 text-silver max-w-2xl mx-auto">
           تواصل معنا اليوم لمناقشة ملفك القانوني مع فريق متخصص يضع مصلحتك أولاً.
         </p>
-        <router-link to="/contact" class="btn btn-primary">
+        <NuxtLink to="/contact" class="btn btn-primary">
           تواصل معنا الآن
-        </router-link>
+        </NuxtLink>
       </div>
     </section>
   </div>
 </template>
 
 <script setup>
-import SectionLabel from '@/components/ui/SectionLabel.vue'
+useHead({
+  title: 'من نحن | مؤسسة رامي شريف للمحاماة'
+})
 
 const values = [
   {
