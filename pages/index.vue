@@ -445,8 +445,35 @@ const toggleAccordion = (index) => {
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 100svh;
+    min-height: 75svh; /* يقصر على الموبايل */
+    height: 75svh;
     background-position: center center;
+    padding-top: 4.8rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.45rem, 5.2vw, 1.95rem);
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-description {
+    margin-bottom: 1.15rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+  }
+
+  .hero-cta-group {
+    gap: 0.65rem;
+  }
+
+  .hero-cta-group .btn {
+    padding: 0.6rem 1.15rem;
+    font-size: 0.85rem;
+  }
+
+  .scroll-indicator {
+    display: none;
   }
 }
 
