@@ -73,7 +73,7 @@
             <div class="about-badge-line">
               <span class="badge-dash"></span>
               <span class="badge-title">من نحن؟</span>
-              <span class="badge-dash"></span>
+              <span class="badge-dash badge-dash-long"></span>
             </div>
 
             <h2 class="about-main-title">
@@ -674,23 +674,30 @@ const toggleAccordion = (index) => {
   flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
+  align-items: flex-start;
+  text-align: right;
   max-width: 580px;
 }
 
 .about-badge-line {
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
+  justify-content: flex-start;
+  gap: 10px;
   margin-bottom: 14px;
 }
 
 .badge-dash {
-  width: 32px;
+  width: 20px;
   height: 1.5px;
   background-color: #8C584E;
+  opacity: 0.85;
+}
+
+.badge-dash-long {
+  width: 50px;
+  height: 1.5px;
+  background: linear-gradient(to left, #8C584E, transparent);
   opacity: 0.85;
 }
 
@@ -712,8 +719,10 @@ const toggleAccordion = (index) => {
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  text-align: right;
   gap: 2px;
+  width: 100%;
 }
 
 .about-description {
@@ -723,7 +732,8 @@ const toggleAccordion = (index) => {
   line-height: 1.9;
   color: #1C2940;
   margin: 0;
-  text-align: center;
+  text-align: right;
+  width: 100%;
 }
 
 @media (max-width: 768px) {
@@ -742,13 +752,23 @@ const toggleAccordion = (index) => {
     border-radius: 14px;
   }
 
+  .about-text-content {
+    align-items: flex-start;
+    text-align: right;
+  }
+
   .about-badge-line {
     gap: 8px;
     margin-bottom: 8px;
+    justify-content: flex-start;
   }
 
   .badge-dash {
-    width: 18px;
+    width: 14px;
+  }
+
+  .badge-dash-long {
+    width: 32px;
   }
 
   .badge-title {
@@ -758,12 +778,15 @@ const toggleAccordion = (index) => {
   .about-main-title {
     font-size: clamp(1.15rem, 4.2vw, 1.55rem);
     margin-bottom: 10px;
+    align-items: flex-start;
+    text-align: right;
     gap: 0;
   }
 
   .about-description {
     font-size: clamp(0.72rem, 2.4vw, 0.85rem);
     line-height: 1.68;
+    text-align: right;
   }
 
   .hidden-xs {
