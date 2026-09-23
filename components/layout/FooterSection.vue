@@ -11,54 +11,29 @@
           مؤسسة قانونية رائدة تقدم خدمات المحاماة والاستشارات القانونية المتكاملة للأفراد والشركات، قائمة على دراسة الوقائع والدقة في التحليل واختيار الحل الأنجز.
         </p>
         <div class="social-icons">
-          <a 
-            href="https://www.facebook.com/ramisharif.law/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="فيسبوك"
-            class="social-icon facebook"
-          >
-            <font-awesome-icon :icon="['fab', 'facebook-f']" />
+          <a href="https://www.facebook.com/ramisharif.law/"
+             target="_blank" rel="noopener noreferrer" aria-label="فيسبوك">
+            <Icon icon="logos:facebook" width="32" height="32" />
           </a>
 
-          <a 
-            href="https://www.instagram.com/ramisharifeg/"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="إنستاجرام"
-            class="social-icon instagram"
-          >
-            <font-awesome-icon :icon="['fab', 'instagram']" />
+          <a href="https://www.instagram.com/ramisharifeg/"
+             target="_blank" rel="noopener noreferrer" aria-label="إنستاجرام">
+            <Icon icon="skill-icons:instagram" width="32" height="32" />
           </a>
 
-          <a 
-            href="https://www.linkedin.com/company/ramisharifeg"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="لينكدإن"
-            class="social-icon linkedin"
-          >
-            <font-awesome-icon :icon="['fab', 'linkedin-in']" />
+          <a href="https://www.linkedin.com/company/ramisharifeg"
+             target="_blank" rel="noopener noreferrer" aria-label="لينكدإن">
+            <Icon icon="logos:linkedin-icon" width="32" height="32" />
           </a>
 
-          <a 
-            href="https://www.youtube.com/@ramisharif.law"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="يوتيوب"
-            class="social-icon youtube"
-          >
-            <font-awesome-icon :icon="['fab', 'youtube']" />
+          <a href="https://www.youtube.com/@ramisharif.law"
+             target="_blank" rel="noopener noreferrer" aria-label="يوتيوب">
+            <Icon icon="logos:youtube-icon" width="32" height="32" />
           </a>
 
-          <a 
-            href="https://wa.me/201111904997"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="واتساب"
-            class="social-icon whatsapp"
-          >
-            <font-awesome-icon :icon="['fab', 'whatsapp']" />
+          <a href="https://wa.me/201111904997"
+             target="_blank" rel="noopener noreferrer" aria-label="واتساب">
+            <Icon icon="logos:whatsapp-icon" width="32" height="32" />
           </a>
         </div>
       </div>
@@ -147,6 +122,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import { Icon } from '@iconify/vue'
 import {
   Phone,
   Mail,
@@ -244,50 +220,23 @@ const currentYear = computed(() => new Date().getFullYear())
 
 .social-icons {
   display: flex;
-  gap: 12px;
+  gap: 16px;
   align-items: center;
   flex-wrap: wrap;
   margin-top: 1.25rem;
 }
 
-.social-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
+.social-icons a {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 16px;
   transition: transform 0.2s ease, opacity 0.2s ease;
-  color: #ffffff !important;
   text-decoration: none;
-  padding: 0 !important;
 }
 
-.social-icon:hover {
+.social-icons a:hover {
   transform: translateY(-3px);
-  opacity: 0.9;
-}
-
-/* ألوان المنصات الرسمية */
-.social-icon.facebook {
-  background-color: #1877F2;
-}
-
-.social-icon.instagram {
-  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
-}
-
-.social-icon.linkedin {
-  background-color: #0A66C2;
-}
-
-.social-icon.youtube {
-  background-color: #FF0000;
-}
-
-.social-icon.whatsapp {
-  background-color: #25D366;
+  opacity: 0.85;
 }
 
 .contact-list {
