@@ -10,51 +10,55 @@
         <p class="footer-desc">
           مؤسسة قانونية رائدة تقدم خدمات المحاماة والاستشارات القانونية المتكاملة للأفراد والشركات، قائمة على دراسة الوقائع والدقة في التحليل واختيار الحل الأنجز.
         </p>
-        <div class="social-icons" aria-label="منصات التواصل الاجتماعي">
+        <div class="social-icons">
           <a 
-            href="https://www.facebook.com/ramisharif.law/" 
-            target="_blank" 
+            href="https://www.facebook.com/ramisharif.law/"
+            target="_blank"
             rel="noopener noreferrer"
             aria-label="فيسبوك"
+            class="social-icon facebook"
           >
-            <Facebook :size="20" :stroke-width="1.5" />
+            <font-awesome-icon :icon="['fab', 'facebook-f']" />
           </a>
 
           <a 
-            href="https://www.instagram.com/ramisharifeg/" 
-            target="_blank" 
+            href="https://www.instagram.com/ramisharifeg/"
+            target="_blank"
             rel="noopener noreferrer"
             aria-label="إنستاجرام"
+            class="social-icon instagram"
           >
-            <Instagram :size="20" :stroke-width="1.5" />
+            <font-awesome-icon :icon="['fab', 'instagram']" />
           </a>
 
           <a 
-            href="https://www.linkedin.com/company/ramisharifeg" 
-            target="_blank" 
+            href="https://www.linkedin.com/company/ramisharifeg"
+            target="_blank"
             rel="noopener noreferrer"
             aria-label="لينكدإن"
+            class="social-icon linkedin"
           >
-            <Linkedin :size="20" :stroke-width="1.5" />
+            <font-awesome-icon :icon="['fab', 'linkedin-in']" />
           </a>
 
           <a 
-            href="https://www.youtube.com/@ramisharif.law" 
-            target="_blank" 
+            href="https://www.youtube.com/@ramisharif.law"
+            target="_blank"
             rel="noopener noreferrer"
             aria-label="يوتيوب"
+            class="social-icon youtube"
           >
-            <Youtube :size="20" :stroke-width="1.5" />
+            <font-awesome-icon :icon="['fab', 'youtube']" />
           </a>
 
           <a 
-            href="https://wa.me/201111904997" 
-            target="_blank" 
+            href="https://wa.me/201111904997"
+            target="_blank"
             rel="noopener noreferrer"
             aria-label="واتساب"
-            class="social-link-whatsapp"
+            class="social-icon whatsapp"
           >
-            <MessageCircle :size="20" :stroke-width="1.5" />
+            <font-awesome-icon :icon="['fab', 'whatsapp']" />
           </a>
         </div>
       </div>
@@ -102,7 +106,7 @@
           </div>
           <div class="contact-item">
             <Mail :size="16" class="contact-icon" />
-            <a href="mailto:Info@Ramisharif.Com" class="contact-link">Info@Ramisharif.Com</a>
+            <a href="mailto:Info@Ramysherif.Com" class="contact-link">Info@Ramysherif.Com</a>
           </div>
           <div class="contact-item">
             <MessageCircle :size="16" class="contact-icon" />
@@ -148,10 +152,6 @@ import {
   Mail,
   MapPin,
   Clock,
-  Linkedin,
-  Facebook,
-  Instagram,
-  Youtube,
   MessageCircle
 } from 'lucide-vue-next'
 
@@ -244,38 +244,50 @@ const currentYear = computed(() => new Date().getFullYear())
 
 .social-icons {
   display: flex;
-  align-items: center;
   gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
   margin-top: 1.25rem;
 }
 
-.social-icons a,
-.social-link {
-  width: 36px;
-  height: 36px;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: var(--color-silver);
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all var(--transition-fast);
+  font-size: 16px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  color: #ffffff !important;
+  text-decoration: none;
   padding: 0 !important;
 }
 
-.social-icons a:hover,
-.social-link:hover {
-  background: var(--color-brown);
-  color: var(--color-white);
-  border-color: var(--color-brown);
-  transform: translateY(-2px);
+.social-icon:hover {
+  transform: translateY(-3px);
+  opacity: 0.9;
 }
 
-.social-icons a.social-link-whatsapp:hover {
-  background: #25D366;
-  border-color: #25D366;
-  color: #FFFFFF;
+/* ألوان المنصات الرسمية */
+.social-icon.facebook {
+  background-color: #1877F2;
+}
+
+.social-icon.instagram {
+  background: linear-gradient(45deg, #F58529, #DD2A7B, #8134AF, #515BD4);
+}
+
+.social-icon.linkedin {
+  background-color: #0A66C2;
+}
+
+.social-icon.youtube {
+  background-color: #FF0000;
+}
+
+.social-icon.whatsapp {
+  background-color: #25D366;
 }
 
 .contact-list {

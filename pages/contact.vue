@@ -186,7 +186,7 @@
                   </span>
                   <div>
                     <strong class="info-title">البريد الإلكتروني:</strong>
-                    <a href="mailto:Info@Ramisharif.Com" class="phone-link">Info@Ramisharif.Com</a>
+                    <a href="mailto:Info@Ramysherif.Com" class="phone-link">Info@Ramysherif.Com</a>
                   </div>
                 </div>
 
