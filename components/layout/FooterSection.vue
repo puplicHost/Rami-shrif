@@ -11,17 +11,40 @@
           مؤسسة قانونية رائدة تقدم خدمات المحاماة والاستشارات القانونية المتكاملة للأفراد والشركات، قائمة على دراسة الوقائع والدقة في التحليل واختيار الحل الأنجز.
         </p>
         <div class="social-icons" aria-label="منصات التواصل الاجتماعي">
-          <a href="https://www.facebook.com/ramisharif.law/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
-            <Facebook :size="20" />
+          <a 
+            href="https://www.facebook.com/ramisharif.law/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="فيسبوك"
+          >
+            <Facebook :size="20" :stroke-width="1.5" />
           </a>
-          <a href="https://www.instagram.com/ramisharifeg/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-            <Instagram :size="20" />
+
+          <a 
+            href="https://www.instagram.com/ramisharifeg/" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="إنستاجرام"
+          >
+            <Instagram :size="20" :stroke-width="1.5" />
           </a>
-          <a href="https://www.linkedin.com/company/ramisharifeg" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-            <Linkedin :size="20" />
+
+          <a 
+            href="https://www.linkedin.com/company/ramisharifeg" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="لينكدإن"
+          >
+            <Linkedin :size="20" :stroke-width="1.5" />
           </a>
-          <a href="https://www.youtube.com/@ramisharif.law" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
-            <Youtube :size="20" />
+
+          <a 
+            href="https://www.youtube.com/@ramisharif.law" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="يوتيوب"
+          >
+            <Youtube :size="20" :stroke-width="1.5" />
           </a>
         </div>
       </div>
@@ -211,6 +234,7 @@ const currentYear = computed(() => new Date().getFullYear())
   margin-top: 1.25rem;
 }
 
+.social-icons a,
 .social-link {
   width: 36px;
   height: 36px;
@@ -225,6 +249,7 @@ const currentYear = computed(() => new Date().getFullYear())
   padding: 0 !important;
 }
 
+.social-icons a:hover,
 .social-link:hover {
   background: var(--color-brown);
   color: var(--color-white);
