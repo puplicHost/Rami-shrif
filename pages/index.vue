@@ -36,13 +36,6 @@
             </NuxtLink>
           </div>
         </div>
-
-        <div class="hero-graphic" aria-hidden="true">
-          <div class="architectural-monogram">
-            <div class="monogram-pillar"></div>
-            <div class="monogram-glow"></div>
-          </div>
-        </div>
       </div>
 
       <a href="#about" class="scroll-indicator" aria-label="انتقل إلى قسم من نحن">
@@ -472,16 +465,14 @@ const toggleAccordion = (index) => {
 .hero-container {
   position: relative;
   z-index: 2;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
+  display: flex;
   align-items: center;
+  justify-content: flex-start;
 }
 
 @media (min-width: 1024px) {
   .hero-container {
-    grid-template-columns: 1.35fr 0.65fr;
-    gap: 4rem;
+    max-width: 860px;
   }
 }
 
@@ -490,6 +481,7 @@ const toggleAccordion = (index) => {
   flex-direction: column;
   align-items: flex-start;
   text-align: right;
+  width: 100%;
 }
 
 @media (max-width: 767px) {
@@ -531,60 +523,6 @@ const toggleAccordion = (index) => {
     justify-content: center;
     width: 100%;
   }
-}
-
-.hero-graphic {
-  display: none;
-}
-
-@media (min-width: 1024px) {
-  .hero-graphic {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-}
-
-.architectural-monogram {
-  position: relative;
-  width: 200px;
-  height: 280px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: var(--radius-sm);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background: radial-gradient(circle at center, rgba(90, 52, 45, 0.25) 0%, transparent 75%);
-}
-
-.monogram-pillar {
-  width: 80px;
-  height: 180px;
-  border-right: 2px solid rgba(255, 255, 255, 0.25);
-  border-left: 2px solid rgba(255, 255, 255, 0.25);
-  position: relative;
-}
-
-.monogram-pillar::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -8px;
-  right: -8px;
-  height: 6px;
-  background-color: var(--color-brown);
-  border-radius: 2px;
-}
-
-.monogram-pillar::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: -12px;
-  right: -12px;
-  height: 8px;
-  background-color: var(--color-brown);
-  border-radius: 2px;
 }
 
 .scroll-indicator {
