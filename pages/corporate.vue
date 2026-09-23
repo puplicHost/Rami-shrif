@@ -91,14 +91,14 @@
       </div>
     </section>
 
-    <!-- خبراتنا المؤسسية (سجل الأعمال والشركات) -->
+    <!-- 11. خبراتنا المؤسسية -->
     <section class="section bg-navy-dark text-white fade-in-section">
       <div class="container">
         <div class="section-center-head">
-          <SectionLabel text="سجل الشراكات" theme="dark" align="center" />
-          <h2 class="h1-title text-center text-white">خبراتنا المؤسسية المتراكمة</h2>
+          <SectionLabel text="خبراتنا المؤسسية" theme="dark" align="center" />
+          <h2 class="h1-title text-center text-white">خبرة عملية عبر قطاعات متنوعة</h2>
           <p class="section-intro-text text-silver text-center">
-            نفخر بتقديم خدمات الاستشارات والتمثيل القانوني لكبرى الكيانات في قطاعات متعددة:
+            اكتسبت المؤسسة خبرة عملية من التعامل مع شركات ومؤسسات تعمل في قطاعات متنوعة، بما أتاح فهمًا أوسع لطبيعة الأنشطة والتحديات القانونية المرتبطة بها.
           </p>
         </div>
 
@@ -106,7 +106,6 @@
           <div class="entity-card" v-for="entity in corporateEntities" :key="entity.name">
             <div class="entity-badge">{{ entity.category }}</div>
             <h3 class="entity-name">{{ entity.name }}</h3>
-            <p class="entity-scope">{{ entity.scope }}</p>
           </div>
         </div>
       </div>
