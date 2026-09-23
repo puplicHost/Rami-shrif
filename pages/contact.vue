@@ -130,37 +130,67 @@
               <div class="divider-brown"></div>
 
               <div class="info-items-list">
+                <!-- العنوان 1 (المنشية - الأساسي) -->
                 <div class="info-block">
                   <span class="info-block-icon">
                     <Building2 :size="20" :stroke-width="1.75" />
                   </span>
                   <div>
-                    <strong class="info-title">المكتب الرئيسي:</strong>
-                    <p class="info-desc">القاهرة الجديدة — التجمع الخامس — جمهورية مصر العربية</p>
+                    <strong class="info-title">المقر الرئيسي (المنشية):</strong>
+                    <p class="info-desc">١ شارع الصحافة - المنشية - مبنى كمال سعد الإداري - أمام محكمة الإسكندرية - الدور ٣ - مكتب رقم ١٠</p>
                   </div>
                 </div>
 
+                <!-- العنوان 2 -->
+                <div class="info-block">
+                  <span class="info-block-icon">
+                    <Building2 :size="20" :stroke-width="1.75" />
+                  </span>
+                  <div>
+                    <strong class="info-title">الفرع الثاني:</strong>
+                    <p class="info-desc">شارع الجلاء، أمام مستشفى العقاد، برج أبو بكر الصديق، الدور الخامس</p>
+                  </div>
+                </div>
+
+                <!-- الهاتف -->
                 <div class="info-block">
                   <span class="info-block-icon">
                     <Phone :size="20" :stroke-width="1.75" />
                   </span>
                   <div>
-                    <strong class="info-title">الهاتف المباشر:</strong>
-                    <p class="info-desc" dir="ltr">+20 100 000 0000</p>
-                    <p class="info-subdesc">خدمة الاستقبال الهاتفي وتنسيق المواعيد</p>
+                    <strong class="info-title">أرقام التواصل:</strong>
+                    <p class="info-desc">
+                      موبايل: <a href="tel:01111904997" dir="ltr" class="phone-link">01111904997</a>
+                    </p>
+                    <p class="info-desc">
+                      أرضي: <a href="tel:034863096" dir="ltr" class="phone-link">034863096</a>
+                    </p>
                   </div>
                 </div>
 
+                <!-- زر الواتساب -->
+                <a
+                  href="https://wa.me/201111904997"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="btn btn-whatsapp"
+                >
+                  <MessageCircle :size="18" />
+                  <span>تواصل عبر واتساب</span>
+                </a>
+
+                <!-- البريد الإلكتروني -->
                 <div class="info-block">
                   <span class="info-block-icon">
                     <Mail :size="20" :stroke-width="1.75" />
                   </span>
                   <div>
                     <strong class="info-title">البريد الإلكتروني:</strong>
-                    <p class="info-desc">info@ramisherif-law.com</p>
+                    <a href="mailto:Info@Ramisharif.Com" class="phone-link">Info@Ramisharif.Com</a>
                   </div>
                 </div>
 
+                <!-- أوقات العمل -->
                 <div class="info-block">
                   <span class="info-block-icon">
                     <Clock :size="20" :stroke-width="1.75" />
@@ -168,18 +198,47 @@
                   <div>
                     <strong class="info-title">أوقات العمل واستقبال العملاء:</strong>
                     <p class="info-desc">الأحد – الخميس: 9:00 صباحاً – 6:00 مساءً</p>
-                    <p class="info-subdesc">الجمعة والسبت: عطلة أسبوعية (المقابلات بحجز مسبق)</p>
+                    <p class="info-subdesc">المقابلات بحجز مسبق</p>
+                  </div>
+                </div>
+
+                <!-- منصات التواصل الاجتماعي -->
+                <div class="contact-social-row">
+                  <strong class="info-title">تابعنا على منصات التواصل:</strong>
+                  <div class="social-icons-list">
+                    <a href="https://www.facebook.com/ramisharif.law/" target="_blank" rel="noopener noreferrer" class="social-link-item" aria-label="Facebook">
+                      <Facebook :size="18" />
+                    </a>
+                    <a href="https://www.instagram.com/ramisharifeg/" target="_blank" rel="noopener noreferrer" class="social-link-item" aria-label="Instagram">
+                      <Instagram :size="18" />
+                    </a>
+                    <a href="https://www.linkedin.com/company/ramisharifeg" target="_blank" rel="noopener noreferrer" class="social-link-item" aria-label="LinkedIn">
+                      <Linkedin :size="18" />
+                    </a>
+                    <a href="https://www.youtube.com/@ramisharif.law" target="_blank" rel="noopener noreferrer" class="social-link-item" aria-label="YouTube">
+                      <Youtube :size="18" />
+                    </a>
                   </div>
                 </div>
               </div>
 
-              <!-- Map Placeholder Box -->
-              <div class="map-placeholder">
-                <div class="map-marker-pin">
-                  <MapPin :size="28" :stroke-width="1.75" />
+              <!-- Map Embed Box -->
+              <div class="map-card-box">
+                <div class="map-head">
+                  <MapPin :size="18" />
+                  <span>مقر المؤسسة أمام محكمة الإسكندرية (المنشية)</span>
                 </div>
-                <div class="map-text">موقع المؤسسة في قلب القاهرة الجديدة</div>
-                <span class="map-sub">سهولة الوصول مع توافر مواقف سيارات خاصة للعملاء</span>
+                <div class="map-iframe-wrap">
+                  <iframe
+                    src="https://maps.google.com/maps?q=31.1996235,29.8929002&hl=ar&z=17&output=embed"
+                    width="100%"
+                    height="200"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </div>
               </div>
             </div>
           </div>
@@ -196,7 +255,12 @@ import {
   Phone,
   Mail,
   Clock,
-  MapPin
+  MapPin,
+  MessageCircle,
+  Facebook,
+  Instagram,
+  Linkedin,
+  Youtube
 } from 'lucide-vue-next'
 
 useHead({
@@ -516,30 +580,99 @@ const resetForm = () => {
   margin: 0.2rem 0 0 0;
 }
 
-.map-placeholder {
-  margin-top: auto;
+.phone-link {
+  color: var(--color-navy);
+  font-weight: 600;
+  transition: color var(--transition-fast);
+}
+
+.phone-link:hover {
+  color: var(--color-brown);
+}
+
+.btn-whatsapp {
+  background-color: #25D366;
+  color: #FFFFFF;
+  border: 1px solid #20BA5A;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  text-decoration: none;
+  margin: 0.35rem 0;
+  width: 100%;
+}
+
+.btn-whatsapp:hover {
+  background-color: #1EBE5D;
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgba(37, 211, 102, 0.3);
+  transform: translateY(-1px);
+}
+
+.contact-social-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 0.5rem;
+}
+
+.social-icons-list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.social-link-item {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
   background: var(--color-white);
   border: 1px solid var(--color-cream-border);
+  color: var(--color-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+}
+
+.social-link-item:hover {
+  background-color: var(--color-brown);
+  border-color: var(--color-brown);
+  color: var(--color-white);
+  transform: translateY(-2px);
+}
+
+.map-card-box {
+  margin-top: 1.5rem;
   border-radius: var(--radius-sm);
-  padding: 1.75rem;
-  text-align: center;
+  overflow: hidden;
+  border: 1px solid var(--color-cream-border);
+  background: var(--color-white);
 }
 
-.map-marker-pin {
-  font-size: 1.75rem;
-  margin-bottom: 0.5rem;
-}
-
-.map-text {
-  font-size: 0.95rem;
+.map-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
   font-weight: 600;
   color: var(--color-navy);
-  margin-bottom: 0.35rem;
+  background: var(--color-cream-light);
+  border-bottom: 1px solid var(--color-cream-border);
 }
 
-.map-sub {
-  font-size: 0.825rem;
-  color: var(--color-muted-text);
+.map-head svg {
+  color: var(--color-brown);
+  flex-shrink: 0;
+}
+
+.map-iframe-wrap iframe {
   display: block;
 }
 </style>

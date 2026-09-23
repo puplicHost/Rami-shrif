@@ -11,17 +11,17 @@
           مؤسسة قانونية رائدة تقدم خدمات المحاماة والاستشارات القانونية المتكاملة للأفراد والشركات، قائمة على دراسة الوقائع والدقة في التحليل واختيار الحل الأنجز.
         </p>
         <div class="social-icons" aria-label="منصات التواصل الاجتماعي">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-            <Linkedin :size="18" :stroke-width="1.75" />
+          <a href="https://www.facebook.com/ramisharif.law/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+            <Facebook :size="20" />
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
-            <Twitter :size="18" :stroke-width="1.75" />
+          <a href="https://www.instagram.com/ramisharifeg/" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+            <Instagram :size="20" />
           </a>
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
-            <Facebook :size="18" :stroke-width="1.75" />
+          <a href="https://www.linkedin.com/company/ramisharifeg" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+            <Linkedin :size="20" />
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-            <Instagram :size="18" :stroke-width="1.75" />
+          <a href="https://www.youtube.com/@ramisharif.law" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="YouTube">
+            <Youtube :size="20" />
           </a>
         </div>
       </div>
@@ -51,21 +51,25 @@
         </div>
       </div>
 
-      <!-- 4. Contact Column + Map (Col 4 on Desktop, Order 4/5 on Mobile) -->
+      <!-- 4. Contact Column + Map (Col 4 on Desktop, Order 4 on Mobile) -->
       <div class="footer-col footer-col-contact">
         <h3>معلومات التواصل</h3>
         <div class="contact-list">
           <div class="contact-item">
             <MapPin :size="16" class="contact-icon" />
-            <span>القاهرة، شارع التحرير، برج النيل — مصر</span>
+            <span>١ شارع الصحافة - المنشية - مبنى كمال سعد الإداري - أمام محكمة الإسكندرية - الدور ٣ - مكتب رقم ١٠</span>
           </div>
           <div class="contact-item">
             <Phone :size="16" class="contact-icon" />
-            <span dir="ltr">+20 100 000 0000</span>
+            <div class="phones-wrap">
+              <a href="tel:01111904997" dir="ltr" class="contact-link">01111904997</a>
+              <span class="phone-sep">|</span>
+              <a href="tel:034863096" dir="ltr" class="contact-link">034863096</a>
+            </div>
           </div>
           <div class="contact-item">
             <Mail :size="16" class="contact-icon" />
-            <span>info@ramisherif-law.com</span>
+            <a href="mailto:Info@Ramisharif.Com" class="contact-link">Info@Ramisharif.Com</a>
           </div>
           <div class="contact-item">
             <Clock :size="16" class="contact-icon" />
@@ -76,7 +80,7 @@
         <!-- الماب تحت التواصل مباشرة -->
         <div class="footer-map">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.7!2d31.2357!3d30.0444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAyJzM5LjgiTiAzMcKwMTQnMDguNSJF!5e0!3m2!1sar!2seg!4v1"
+            src="https://maps.google.com/maps?q=31.1996235,29.8929002&hl=ar&z=17&output=embed"
             width="100%"
             height="180"
             style="border:0;"
@@ -108,9 +112,9 @@ import {
   MapPin,
   Clock,
   Linkedin,
-  Twitter,
   Facebook,
-  Instagram
+  Instagram,
+  Youtube
 } from 'lucide-vue-next'
 
 const currentYear = computed(() => new Date().getFullYear())
@@ -126,7 +130,7 @@ const currentYear = computed(() => new Date().getFullYear())
 @media (min-width: 1024px) {
   .footer-container {
     display: grid;
-    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    grid-template-columns: 1.4fr 1fr 1fr 1.6fr;
     gap: 40px;
     padding: 64px 80px;
     align-items: start;
@@ -208,8 +212,8 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .social-link {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: var(--radius-sm);
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -231,15 +235,16 @@ const currentYear = computed(() => new Date().getFullYear())
 .contact-list {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.65rem;
 }
 
 .contact-item {
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  margin-bottom: 12px;
-  font-size: 14px;
+  margin-bottom: 10px;
+  font-size: 13.5px;
+  line-height: 1.6;
   direction: rtl;
   color: var(--color-silver);
 }
@@ -248,6 +253,26 @@ const currentYear = computed(() => new Date().getFullYear())
   color: #B26A5D;
   flex-shrink: 0;
   margin-top: 3px;
+}
+
+.phones-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.phone-sep {
+  opacity: 0.4;
+  color: var(--color-silver);
+}
+
+.contact-link {
+  color: var(--color-silver);
+  transition: color var(--transition-fast);
+}
+
+.contact-link:hover {
+  color: var(--color-white);
 }
 
 /* Footer Map */
@@ -276,7 +301,7 @@ const currentYear = computed(() => new Date().getFullYear())
   .footer-container {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 36px;
     padding: 48px 24px;
   }
 
@@ -339,7 +364,7 @@ const currentYear = computed(() => new Date().getFullYear())
   }
 
   .footer-map {
-    margin-top: 20px;
+    margin-top: 18px;
   }
 
   .footer-map iframe {
