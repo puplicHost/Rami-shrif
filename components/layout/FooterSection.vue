@@ -1,99 +1,103 @@
 <template>
   <footer class="footer-section bg-navy-dark">
-    <div class="container footer-container">
-      <div class="footer-two-col-grid">
-        <!-- Col 1: Brand, Tagline, Quick Links & Social -->
-        <div class="footer-col footer-col-brand">
-          <div class="brand-header-wrap">
-            <AppLogo theme="dark" :size="52" />
-            <p class="footer-tagline">
-              نفهم الملف… نُقيّم الموقف… ونختار المسار القانوني الأنسب.
-            </p>
-            <p class="footer-desc">
-              مؤسسة قانونية رائدة تقدم خدمات المحاماة والاستشارات القانونية المتكاملة للأفراد والشركات، قائمة على دراسة الوقائع والدقة في التحليل واختيار الحل الأنجز.
-            </p>
-          </div>
+    <div class="footer-container">
+      <!-- 1. Brand Section (Col 1 on Desktop, Order 1 on Mobile) -->
+      <div class="footer-col footer-col-brand">
+        <AppLogo theme="dark" :size="52" />
+        <p class="footer-tagline">
+          نفهم الملف… نُقيّم الموقف… ونختار المسار القانوني الأنسب.
+        </p>
+        <p class="footer-desc">
+          مؤسسة قانونية رائدة تقدم خدمات المحاماة والاستشارات القانونية المتكاملة للأفراد والشركات، قائمة على دراسة الوقائع والدقة في التحليل واختيار الحل الأنجز.
+        </p>
+        <div class="social-icons" aria-label="منصات التواصل الاجتماعي">
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
+            <Linkedin :size="18" :stroke-width="1.75" />
+          </a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
+            <Twitter :size="18" :stroke-width="1.75" />
+          </a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
+            <Facebook :size="18" :stroke-width="1.75" />
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
+            <Instagram :size="18" :stroke-width="1.75" />
+          </a>
+        </div>
+      </div>
 
-          <div class="footer-sub-section">
-            <h4 class="footer-heading">التنقل السريع</h4>
-            <ul class="footer-list">
-              <li><NuxtLink to="/">الرئيسية</NuxtLink></li>
-              <li><NuxtLink to="/about">من نحن ورؤيتنا</NuxtLink></li>
-              <li><NuxtLink to="/methodology">منهجنا في العمل</NuxtLink></li>
-              <li><NuxtLink to="/corporate">للشركات والمؤسسات</NuxtLink></li>
-              <li><NuxtLink to="/individuals">للأفراد</NuxtLink></li>
-              <li><NuxtLink to="/contact">تواصل معنا</NuxtLink></li>
-            </ul>
-          </div>
-
-          <!-- Social media icons -->
-          <div class="footer-social-links" aria-label="منصات التواصل الاجتماعي">
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn">
-              <Linkedin :size="18" :stroke-width="1.75" />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Twitter">
-              <Twitter :size="18" :stroke-width="1.75" />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebook">
-              <Facebook :size="18" :stroke-width="1.75" />
-            </a>
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
-              <Instagram :size="18" :stroke-width="1.75" />
-            </a>
+      <!-- Links Wrapper (Col 2 on Desktop, Unrolled on Mobile) -->
+      <div class="footer-links-wrapper">
+        <!-- 2. Quick Navigation (Order 2 on Mobile) -->
+        <div class="footer-col footer-col-nav">
+          <h3>التنقل السريع</h3>
+          <div class="links-list">
+            <NuxtLink to="/">الرئيسية</NuxtLink>
+            <NuxtLink to="/about">من نحن ورؤيتنا</NuxtLink>
+            <NuxtLink to="/methodology">منهجنا في العمل</NuxtLink>
+            <NuxtLink to="/corporate">للشركات والمؤسسات</NuxtLink>
+            <NuxtLink to="/individuals">للأفراد</NuxtLink>
+            <NuxtLink to="/contact">تواصل معنا</NuxtLink>
           </div>
         </div>
 
-        <!-- Col 2: Practice Areas & Contact Details -->
-        <div class="footer-col footer-col-info">
-          <div class="footer-sub-section">
-            <h4 class="footer-heading">مجالات العمل</h4>
-            <ul class="footer-list">
-              <li><NuxtLink to="/practice-areas/civil">القانون المدني</NuxtLink></li>
-              <li><NuxtLink to="/practice-areas/commercial">القانون التجاري</NuxtLink></li>
-              <li><NuxtLink to="/practice-areas/corporate-law">قانون الشركات</NuxtLink></li>
-              <li><NuxtLink to="/practice-areas/personal-status">الأحوال الشخصية</NuxtLink></li>
-              <li><NuxtLink to="/practice-areas/financial-disputes">المنازعات المالية</NuxtLink></li>
-            </ul>
-          </div>
-
-          <div class="footer-sub-section">
-            <h4 class="footer-heading">معلومات التواصل والحجز</h4>
-            <ul class="contact-info-list">
-              <li class="contact-info-item">
-                <span class="info-icon"><MapPin :size="18" :stroke-width="1.75" /></span>
-                <span>القاهرة، جمهورية مصر العربية</span>
-              </li>
-              <li class="contact-info-item">
-                <span class="info-icon"><Phone :size="18" :stroke-width="1.75" /></span>
-                <span dir="ltr">+20 100 000 0000</span>
-              </li>
-              <li class="contact-info-item">
-                <span class="info-icon"><Mail :size="18" :stroke-width="1.75" /></span>
-                <span>info@ramisherif-law.com</span>
-              </li>
-              <li class="contact-info-item">
-                <span class="info-icon"><Clock :size="18" :stroke-width="1.75" /></span>
-                <span>الأحد – الخميس: 9:00 ص – 6:00 م</span>
-              </li>
-            </ul>
-          </div>
-
-          <div class="footer-cta-box">
-            <NuxtLink to="/contact" class="btn btn-primary btn-sm">
-              احجز استشارة قانونية
-            </NuxtLink>
+        <!-- 3. Practice Areas (Order 3 on Mobile) -->
+        <div class="footer-col footer-col-areas">
+          <h3>مجالات العمل</h3>
+          <div class="links-list">
+            <NuxtLink to="/practice-areas/civil">القانون المدني</NuxtLink>
+            <NuxtLink to="/practice-areas/commercial">القانون التجاري</NuxtLink>
+            <NuxtLink to="/practice-areas/corporate-law">قانون الشركات</NuxtLink>
+            <NuxtLink to="/practice-areas/personal-status">الأحوال الشخصية</NuxtLink>
+            <NuxtLink to="/practice-areas/financial-disputes">المنازعات المالية</NuxtLink>
           </div>
         </div>
       </div>
 
-      <!-- Bottom Bar -->
-      <div class="footer-bottom-bar">
-        <p class="copyright-text">
-          © {{ currentYear }} مؤسسة رامي شريف للمحاماة — جميع الحقوق محفوظة
-        </p>
-        <div class="footer-bottom-notes">
-          <span>الالتزام بأعلى معايير السرية والمهنية القانونية</span>
+      <!-- 4. Contact Column (Col 3 on Desktop, Order 4 on Mobile) -->
+      <div class="footer-col footer-col-contact">
+        <h3>معلومات التواصل</h3>
+        <div class="contact-list">
+          <div class="contact-item">
+            <span class="info-icon"><MapPin :size="18" :stroke-width="1.75" /></span>
+            <span>القاهرة، جمهورية مصر العربية</span>
+          </div>
+          <div class="contact-item">
+            <span class="info-icon"><Phone :size="18" :stroke-width="1.75" /></span>
+            <span dir="ltr">+20 100 000 0000</span>
+          </div>
+          <div class="contact-item">
+            <span class="info-icon"><Mail :size="18" :stroke-width="1.75" /></span>
+            <span>info@ramisherif-law.com</span>
+          </div>
+          <div class="contact-item">
+            <span class="info-icon"><Clock :size="18" :stroke-width="1.75" /></span>
+            <span>الأحد – الخميس: 9:00 ص – 6:00 م</span>
+          </div>
         </div>
+
+        <div class="footer-cta desktop-cta">
+          <NuxtLink to="/contact" class="btn btn-primary btn-sm w-full">
+            احجز استشارة قانونية
+          </NuxtLink>
+        </div>
+      </div>
+
+      <!-- 5. CTA Button on Mobile (Order 5 on Mobile) -->
+      <div class="footer-cta mobile-cta">
+        <NuxtLink to="/contact" class="btn btn-primary btn-sm w-full">
+          احجز استشارة قانونية
+        </NuxtLink>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom-bar footer-bottom">
+      <p class="copyright-text">
+        © {{ currentYear }} مؤسسة رامي شريف للمحاماة — جميع الحقوق محفوظة
+      </p>
+      <div class="footer-bottom-notes">
+        <span>الالتزام بأعلى معايير السرية والمهنية القانونية</span>
       </div>
     </div>
   </footer>
@@ -118,95 +122,58 @@ const currentYear = computed(() => new Date().getFullYear())
 <style scoped>
 .footer-section {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 4.5rem;
-  padding-bottom: 2rem;
   background-color: #121B2A;
 }
 
-.footer-two-col-grid {
+/* Desktop (lg+) */
+.footer-container {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: clamp(20px, 4vw, 56px);
-  padding-bottom: 3.5rem;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 48px;
+  padding: 64px 80px;
+  align-items: start;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-links-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
 }
 
 .footer-col {
   display: flex;
   flex-direction: column;
-  gap: 1.75rem;
 }
 
-.brand-header-wrap {
+.footer-col h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-white);
+  margin-bottom: 1.25rem;
+  padding-bottom: 8px;
+  border-bottom: 1px solid rgba(196, 196, 196, 0.2);
+  display: block;
+}
+
+.links-list {
   display: flex;
   flex-direction: column;
-  gap: 0.85rem;
+  gap: 0.65rem;
 }
 
-.footer-sub-section {
-  display: flex;
-  flex-direction: column;
+.footer-col a {
+  display: block;
+  padding: 6px 0;
+  font-size: 14px;
+  color: var(--color-silver);
+  transition: color var(--transition-fast), padding-right var(--transition-fast);
 }
 
-@media (max-width: 639px) {
-  .footer-section {
-    padding-top: 3rem;
-    padding-bottom: 1.5rem;
-  }
-
-  .footer-two-col-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    padding-bottom: 2rem;
-  }
-
-  .footer-col {
-    gap: 1.25rem;
-  }
-
-  .footer-tagline {
-    font-size: 0.85rem;
-    line-height: 1.4;
-  }
-
-  .footer-desc {
-    display: none;
-  }
-
-  .footer-heading {
-    font-size: 0.92rem;
-    margin-bottom: 0.85rem;
-  }
-
-  .footer-list a {
-    font-size: 0.8rem;
-  }
-
-  .contact-info-list {
-    gap: 0.5rem;
-  }
-
-  .contact-info-item {
-    font-size: 0.78rem;
-    gap: 0.4rem;
-    word-break: break-all;
-  }
-
-  .social-link {
-    width: 30px;
-    height: 30px;
-  }
-
-  .footer-cta-box .btn {
-    padding: 0.55rem 0.85rem;
-    font-size: 0.78rem;
-    width: 100%;
-  }
-
-  .footer-bottom-bar {
-    font-size: 0.75rem;
-    padding-top: 1.25rem;
-  }
+.footer-col a:hover {
+  color: var(--color-white);
+  padding-right: 4px;
 }
 
 .footer-tagline {
@@ -215,82 +182,21 @@ const currentYear = computed(() => new Date().getFullYear())
   font-weight: 700;
   color: var(--color-silver-light);
   line-height: 1.5;
+  margin-top: 1rem;
+  margin-bottom: 0.75rem;
 }
 
 .footer-desc {
   font-size: 0.88rem;
   line-height: 1.8;
   color: var(--color-silver);
-  max-width: 44ch;
+  max-width: 36ch;
 }
 
-.footer-heading {
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--color-white);
-  margin-bottom: 1.25rem;
-  position: relative;
-  display: inline-block;
-}
-
-.footer-heading::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  right: 0;
-  width: 24px;
-  height: 2px;
-  background-color: var(--color-brown);
-}
-
-.footer-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.footer-list a {
-  font-size: 0.9rem;
-  color: var(--color-silver);
-  transition: color var(--transition-fast), padding-right var(--transition-fast);
-}
-
-.footer-list a:hover {
-  color: var(--color-white);
-  padding-right: 4px;
-}
-
-.contact-info-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.contact-info-item {
+.social-icons {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  font-size: 0.88rem;
-  color: var(--color-silver);
-}
-
-.info-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #B26A5D;
-}
-
-.footer-social-links {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  gap: 12px;
   margin-top: 1.25rem;
 }
 
@@ -305,6 +211,7 @@ const currentYear = computed(() => new Date().getFullYear())
   align-items: center;
   justify-content: center;
   transition: all var(--transition-fast);
+  padding: 0 !important;
 }
 
 .social-link:hover {
@@ -314,36 +221,166 @@ const currentYear = computed(() => new Date().getFullYear())
   transform: translateY(-2px);
 }
 
-.footer-cta-box {
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 12px;
+  font-size: 14px;
+  direction: rtl;
+  color: var(--color-silver);
+}
+
+.info-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #B26A5D;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+.desktop-cta {
   margin-top: 1.5rem;
 }
 
-.btn-sm {
-  padding: 0.65rem 1.25rem;
-  font-size: 0.85rem;
+.mobile-cta {
+  display: none;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .footer-bottom-bar {
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding-top: 1.85rem;
+  padding: 1.5rem 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.85rem;
   color: #7E8C9F;
-  text-align: center;
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-@media (min-width: 768px) {
+/* Tablet adjustments (769px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .footer-container {
+    grid-template-columns: 1fr 1fr;
+    padding: 48px 32px;
+    gap: 36px;
+  }
+
   .footer-bottom-bar {
-    flex-direction: row;
-    text-align: right;
+    padding: 1.5rem 32px;
   }
 }
 
-.footer-bottom-notes {
-  font-size: 0.82rem;
-  color: #6C7A8E;
+/* Mobile — إعادة تنظيم كاملة */
+@media (max-width: 768px) {
+  .footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 48px 24px;
+  }
+
+  .footer-links-wrapper {
+    display: contents;
+  }
+
+  /* كل column تاخد عرض كامل */
+  .footer-col {
+    width: 100%;
+  }
+
+  /* الـ brand section في الأول */
+  .footer-col-brand {
+    order: 1;
+    text-align: right;
+  }
+
+  /* التنقل السريع */
+  .footer-col-nav {
+    order: 2;
+  }
+
+  /* مجالات العمل */
+  .footer-col-areas {
+    order: 3;
+  }
+
+  /* معلومات التواصل */
+  .footer-col-contact {
+    order: 4;
+  }
+
+  .desktop-cta {
+    display: none;
+  }
+
+  .mobile-cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    order: 5;
+  }
+
+  /* الـ social icons */
+  .social-icons {
+    justify-content: flex-start;
+    gap: 16px;
+    margin-top: 16px;
+  }
+
+  /* CTA button */
+  .footer-cta {
+    width: 100%;
+    text-align: center;
+    order: 5;
+  }
+
+  /* العنوان لكل column */
+  .footer-col h3 {
+    font-size: 16px;
+    margin-bottom: 16px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid rgba(196, 196, 196, 0.2);
+  }
+
+  /* Links */
+  .footer-col a {
+    display: block;
+    padding: 6px 0;
+    font-size: 14px;
+  }
+
+  /* Contact items */
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    direction: rtl;
+  }
+
+  /* Bottom bar */
+  .footer-bottom {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 8px;
+    font-size: 12px;
+    padding: 16px 24px;
+  }
 }
 </style>
