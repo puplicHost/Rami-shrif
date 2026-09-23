@@ -92,44 +92,6 @@
       </div>
     </section>
 
-    <!-- 3. فلسفتنا — Philosophy Strip -->
-    <section id="philosophy" class="section section-tight bg-cream philosophy-section fade-in-section">
-      <div class="container philosophy-container">
-        <div class="philosophy-card">
-          <h2 class="h1-title philosophy-quote philosophy-headline">
-            «الإجراء القانوني ليس نقطة البداية.»
-          </h2>
-          <div class="divider-brown divider-center"></div>
-          <p class="body-regular philosophy-subtext">
-            البداية الصحيحة هي فهم المشكلة، وتقييم الموقف القانوني، وتحديد الخيارات المتاحة، ثم اختيار المسار الأنسب.
-          </p>
-
-          <!-- Horizontal Process Flow -->
-          <div class="philosophy-flow" aria-label="تسلسل مراحل العمل">
-            <div class="flow-item">
-              <span class="flow-word">فهم</span>
-            </div>
-            <div class="flow-arrow" aria-hidden="true">←</div>
-            <div class="flow-item">
-              <span class="flow-word">تقييم</span>
-            </div>
-            <div class="flow-arrow" aria-hidden="true">←</div>
-            <div class="flow-item">
-              <span class="flow-word">خيارات</span>
-            </div>
-            <div class="flow-arrow" aria-hidden="true">←</div>
-            <div class="flow-item">
-              <span class="flow-word">اختيار</span>
-            </div>
-            <div class="flow-arrow" aria-hidden="true">←</div>
-            <div class="flow-item">
-              <span class="flow-word">متابعة</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- 4. منهجنا في العمل — The 6 Steps (Visual Centerpiece) -->
     <section class="section bg-navy-dark steps-section fade-in-section" aria-label="منهجنا في العمل">
       <div class="container">
@@ -848,91 +810,6 @@ const toggleAccordion = (index) => {
   .hidden-xs {
     display: none;
   }
-}
-
-/* 3. Philosophy Section */
-.philosophy-section {
-  text-align: center;
-  border-bottom: 1px solid var(--color-cream-border);
-}
-
-.philosophy-container {
-  max-width: 860px;
-}
-
-.philosophy-card {
-  background: rgba(255, 255, 255, 0.7);
-  border: 1px solid var(--color-cream-border);
-  border-radius: 16px;
-  padding: 3rem 2.5rem;
-  box-shadow: var(--shadow-sm);
-}
-
-.philosophy-quote {
-  color: var(--color-navy);
-  font-size: clamp(1.6rem, 3.2vw, 2.35rem);
-  font-weight: 700;
-  line-height: 1.4;
-}
-
-.philosophy-subtext {
-  font-size: 1.1rem;
-  line-height: 1.9;
-  color: var(--color-muted-text);
-  margin-bottom: 2.5rem;
-}
-
-.philosophy-flow {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.25rem;
-  padding: 1.25rem;
-  background: rgba(255, 255, 255, 0.65);
-  border: 1px solid var(--color-cream-border);
-  border-radius: var(--radius-pill);
-}
-
-@media (max-width: 768px) {
-  .philosophy-section {
-    padding: 60px 24px;
-  }
-
-  .philosophy-card {
-    padding: 40px 28px;
-    border-radius: 16px;
-  }
-
-  .philosophy-headline {
-    font-size: 22px;
-    line-height: 1.6;
-    margin-bottom: 20px;
-  }
-
-  .philosophy-flow {
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-    font-size: 14px;
-  }
-}
-
-.flow-item {
-  display: flex;
-  align-items: center;
-}
-
-.flow-word {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--color-navy);
-}
-
-.flow-arrow {
-  color: var(--color-brown);
-  font-size: 1rem;
-  font-weight: bold;
 }
 
 /* 4. Steps Section */
