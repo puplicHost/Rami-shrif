@@ -443,19 +443,19 @@ const toggleAccordion = (index) => {
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 60svh;
-    height: 60svh;
+    min-height: 55svh;
+    height: 55svh;
     background-position: center center;
-    padding-top: 54px;
-    padding-bottom: 6px;
+    padding-top: 50px;
+    padding-bottom: 4px;
     align-items: center;
   }
 
   /* قلل الـ padding الداخلي */
   .hero-container,
   .hero-content {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 6px;
+    padding-bottom: 6px;
     justify-content: center;
     align-items: center;
   }
@@ -464,17 +464,17 @@ const toggleAccordion = (index) => {
   .hero-content h1,
   .display-title,
   .hero-title {
-    font-size: clamp(24px, 6.2vw, 29px);
-    line-height: 1.32;
-    margin-bottom: 6px;
+    font-size: clamp(22px, 5.8vw, 27px);
+    line-height: 1.28;
+    margin-bottom: 4px;
   }
 
   .hero-content p,
   .hero-description {
-    font-size: 13.5px;
-    margin-top: 6px;
-    margin-bottom: 14px;
-    line-height: 1.55;
+    font-size: 13px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    line-height: 1.5;
   }
 
   /* الأزرار جنب بعض مش تحت بعض */
@@ -482,15 +482,15 @@ const toggleAccordion = (index) => {
   .hero-cta-group {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 8px;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
   }
 
   .hero-cta-group .btn {
-    padding: 7px 15px;
-    font-size: 13px;
+    padding: 6px 14px;
+    font-size: 12.5px;
   }
 
   .scroll-indicator {
