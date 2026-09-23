@@ -46,6 +46,16 @@
           >
             <Youtube :size="20" :stroke-width="1.5" />
           </a>
+
+          <a 
+            href="https://wa.me/201111904997" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            aria-label="واتساب"
+            class="social-link-whatsapp"
+          >
+            <MessageCircle :size="20" :stroke-width="1.5" />
+          </a>
         </div>
       </div>
 
@@ -95,6 +105,10 @@
             <a href="mailto:Info@Ramisharif.Com" class="contact-link">Info@Ramisharif.Com</a>
           </div>
           <div class="contact-item">
+            <MessageCircle :size="16" class="contact-icon" />
+            <a href="https://wa.me/201111904997" target="_blank" rel="noopener noreferrer" class="contact-link" dir="ltr">واتساب: +20 111 190 4997</a>
+          </div>
+          <div class="contact-item">
             <Clock :size="16" class="contact-icon" />
             <span>الأحد – الخميس: 9:00 ص – 6:00 م</span>
           </div>
@@ -137,7 +151,8 @@ import {
   Linkedin,
   Facebook,
   Instagram,
-  Youtube
+  Youtube,
+  MessageCircle
 } from 'lucide-vue-next'
 
 const currentYear = computed(() => new Date().getFullYear())
@@ -255,6 +270,12 @@ const currentYear = computed(() => new Date().getFullYear())
   color: var(--color-white);
   border-color: var(--color-brown);
   transform: translateY(-2px);
+}
+
+.social-icons a.social-link-whatsapp:hover {
+  background: #25D366;
+  border-color: #25D366;
+  color: #FFFFFF;
 }
 
 .contact-list {
