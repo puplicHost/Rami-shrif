@@ -14,8 +14,6 @@
 
       <div class="container hero-container">
         <div class="hero-content">
-          <SectionLabel text="مؤسسة رامي شريف للمحاماة" theme="dark" />
-          
           <h1 class="display-title hero-title">
             <span class="hero-line">نفهم الملف…</span>
             <span class="hero-line">نُقيّم الموقف…</span>
@@ -445,19 +443,19 @@ const toggleAccordion = (index) => {
 
 @media (max-width: 768px) {
   .hero-section {
-    min-height: 65svh;
-    height: 65svh;
+    min-height: 60svh;
+    height: 60svh;
     background-position: center center;
-    padding-top: 60px;
-    padding-bottom: 8px;
+    padding-top: 54px;
+    padding-bottom: 6px;
     align-items: center;
   }
 
   /* قلل الـ padding الداخلي */
   .hero-container,
   .hero-content {
-    padding-top: 16px;
-    padding-bottom: 16px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     justify-content: center;
     align-items: center;
   }
@@ -466,17 +464,17 @@ const toggleAccordion = (index) => {
   .hero-content h1,
   .display-title,
   .hero-title {
-    font-size: 32px;
-    line-height: 1.4;
-    margin-bottom: 8px;
+    font-size: clamp(24px, 6.2vw, 29px);
+    line-height: 1.32;
+    margin-bottom: 6px;
   }
 
   .hero-content p,
   .hero-description {
-    font-size: 14px;
-    margin-top: 8px;
-    margin-bottom: 16px;
-    line-height: 1.6;
+    font-size: 13.5px;
+    margin-top: 6px;
+    margin-bottom: 14px;
+    line-height: 1.55;
   }
 
   /* الأزرار جنب بعض مش تحت بعض */
@@ -484,15 +482,15 @@ const toggleAccordion = (index) => {
   .hero-cta-group {
     display: flex;
     flex-direction: row;
-    gap: 12px;
+    gap: 10px;
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
   }
 
   .hero-cta-group .btn {
-    padding: 8px 16px;
-    font-size: 13.5px;
+    padding: 7px 15px;
+    font-size: 13px;
   }
 
   .scroll-indicator {
