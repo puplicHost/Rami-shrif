@@ -216,8 +216,8 @@
 
     <!-- 8. للأفراد — Individuals Teaser -->
     <section class="section bg-cream individuals-teaser-section fade-in-section" aria-label="خدمات الأفراد">
-      <div class="container individuals-split-container">
-        <div class="individuals-text-col">
+      <div class="container">
+        <div class="individuals-content-box">
           <SectionLabel text="للأفراد" theme="light" />
           <h2 class="h1-title section-title-dark">كل ملف له خصوصيته</h2>
           <p class="body-lead text-dark-muted individuals-body">
@@ -228,22 +228,6 @@
               تحدث معنا حول ملفك
               <span aria-hidden="true">←</span>
             </NuxtLink>
-          </div>
-        </div>
-
-        <div class="individuals-visual-col" aria-hidden="true">
-          <div class="quiet-visual-card">
-            <div class="quiet-accent-bar"></div>
-            <p class="quiet-quote">
-              «الخصوصية والاهتمام المباشر هما أساس بناء الثقة بين المحامي وموكله.»
-            </p>
-            <div class="quiet-badge">
-              <span>سرية تامة</span>
-              <span class="badge-dot">•</span>
-              <span>تقييم موضوعي</span>
-              <span class="badge-dot">•</span>
-              <span>تواصل مباشر</span>
-            </div>
           </div>
         </div>
       </div>
@@ -983,62 +967,13 @@ const toggleAccordion = (index) => {
 }
 
 /* 8. Individuals Teaser */
-.individuals-split-container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  align-items: center;
-}
-
-@media (min-width: 768px) {
-  .individuals-split-container {
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 3.5rem;
-  }
+.individuals-content-box {
+  max-width: 680px;
 }
 
 .individuals-body {
   margin-top: 0.75rem;
   margin-bottom: 2rem;
-}
-
-.quiet-visual-card {
-  background: var(--color-white);
-  border: 1px solid var(--color-cream-border);
-  border-radius: var(--radius-md);
-  padding: 2.5rem 2rem;
-  box-shadow: var(--shadow-sm);
-  position: relative;
-}
-
-.quiet-accent-bar {
-  width: 36px;
-  height: 3px;
-  background-color: var(--color-brown);
-  border-radius: 2px;
-  margin-bottom: 1.5rem;
-}
-
-.quiet-quote {
-  font-family: var(--font-display);
-  font-size: 1.25rem;
-  font-weight: 600;
-  line-height: 1.7;
-  color: var(--color-navy);
-  margin-bottom: 1.5rem;
-}
-
-.quiet-badge {
-  display: flex;
-  align-items: center;
-  gap: 0.65rem;
-  font-size: 0.825rem;
-  color: var(--color-brown);
-  font-weight: 600;
-}
-
-.badge-dot {
-  color: var(--color-silver);
 }
 
 /* 9. Final CTA */
