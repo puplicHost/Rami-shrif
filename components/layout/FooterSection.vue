@@ -26,54 +26,64 @@
         </div>
       </div>
 
-      <!-- Links Wrapper (Col 2 on Desktop, Unrolled on Mobile) -->
-      <div class="footer-links-wrapper">
-        <!-- 2. Quick Navigation (Order 2 on Mobile) -->
-        <div class="footer-col footer-col-nav">
-          <h3>التنقل السريع</h3>
-          <div class="links-list">
-            <NuxtLink to="/">الرئيسية</NuxtLink>
-            <NuxtLink to="/about">من نحن ورؤيتنا</NuxtLink>
-            <NuxtLink to="/methodology">منهجنا في العمل</NuxtLink>
-            <NuxtLink to="/corporate">للشركات والمؤسسات</NuxtLink>
-            <NuxtLink to="/individuals">للأفراد</NuxtLink>
-            <NuxtLink to="/contact">تواصل معنا</NuxtLink>
-          </div>
-        </div>
-
-        <!-- 3. Practice Areas (Order 3 on Mobile) -->
-        <div class="footer-col footer-col-areas">
-          <h3>مجالات العمل</h3>
-          <div class="links-list">
-            <NuxtLink to="/practice-areas/civil">القانون المدني</NuxtLink>
-            <NuxtLink to="/practice-areas/commercial">القانون التجاري</NuxtLink>
-            <NuxtLink to="/practice-areas/corporate-law">قانون الشركات</NuxtLink>
-            <NuxtLink to="/practice-areas/personal-status">الأحوال الشخصية</NuxtLink>
-            <NuxtLink to="/practice-areas/financial-disputes">المنازعات المالية</NuxtLink>
-          </div>
+      <!-- 2. Quick Navigation (Col 2 on Desktop, Order 2 on Mobile) -->
+      <div class="footer-col footer-col-nav">
+        <h3>التنقل السريع</h3>
+        <div class="links-list">
+          <NuxtLink to="/">الرئيسية</NuxtLink>
+          <NuxtLink to="/about">من نحن ورؤيتنا</NuxtLink>
+          <NuxtLink to="/methodology">منهجنا في العمل</NuxtLink>
+          <NuxtLink to="/corporate">للشركات والمؤسسات</NuxtLink>
+          <NuxtLink to="/individuals">للأفراد</NuxtLink>
+          <NuxtLink to="/contact">تواصل معنا</NuxtLink>
         </div>
       </div>
 
-      <!-- 4. Contact Column (Col 3 on Desktop, Order 4 on Mobile) -->
+      <!-- 3. Practice Areas (Col 3 on Desktop, Order 3 on Mobile) -->
+      <div class="footer-col footer-col-areas">
+        <h3>مجالات العمل</h3>
+        <div class="links-list">
+          <NuxtLink to="/practice-areas/civil">القانون المدني</NuxtLink>
+          <NuxtLink to="/practice-areas/commercial">القانون التجاري</NuxtLink>
+          <NuxtLink to="/practice-areas/corporate-law">قانون الشركات</NuxtLink>
+          <NuxtLink to="/practice-areas/personal-status">الأحوال الشخصية</NuxtLink>
+          <NuxtLink to="/practice-areas/financial-disputes">المنازعات المالية</NuxtLink>
+        </div>
+      </div>
+
+      <!-- 4. Contact Column + Map (Col 4 on Desktop, Order 4/5 on Mobile) -->
       <div class="footer-col footer-col-contact">
         <h3>معلومات التواصل</h3>
         <div class="contact-list">
           <div class="contact-item">
-            <span class="info-icon"><MapPin :size="18" :stroke-width="1.75" /></span>
-            <span>القاهرة، جمهورية مصر العربية</span>
+            <MapPin :size="16" class="contact-icon" />
+            <span>القاهرة، شارع التحرير، برج النيل — مصر</span>
           </div>
           <div class="contact-item">
-            <span class="info-icon"><Phone :size="18" :stroke-width="1.75" /></span>
+            <Phone :size="16" class="contact-icon" />
             <span dir="ltr">+20 100 000 0000</span>
           </div>
           <div class="contact-item">
-            <span class="info-icon"><Mail :size="18" :stroke-width="1.75" /></span>
+            <Mail :size="16" class="contact-icon" />
             <span>info@ramisherif-law.com</span>
           </div>
           <div class="contact-item">
-            <span class="info-icon"><Clock :size="18" :stroke-width="1.75" /></span>
+            <Clock :size="16" class="contact-icon" />
             <span>الأحد – الخميس: 9:00 ص – 6:00 م</span>
           </div>
+        </div>
+
+        <!-- الماب تحت التواصل مباشرة -->
+        <div class="footer-map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.7!2d31.2357!3d30.0444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAyJzM5LjgiTiAzMcKwMTQnMDguNSJF!5e0!3m2!1sar!2seg!4v1"
+            width="100%"
+            height="180"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
         </div>
       </div>
     </div>
@@ -112,21 +122,31 @@ const currentYear = computed(() => new Date().getFullYear())
   background-color: #121B2A;
 }
 
-/* Desktop (lg+) */
-.footer-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 48px;
-  padding: 64px 80px;
-  align-items: start;
-  max-width: 1400px;
-  margin: 0 auto;
+/* Desktop layout — 4 columns */
+@media (min-width: 1024px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+    gap: 40px;
+    padding: 64px 80px;
+    align-items: start;
+    max-width: 1440px;
+    margin: 0 auto;
+  }
 }
 
-.footer-links-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 32px;
+/* Tablet layout (769px - 1023px) */
+@media (min-width: 769px) and (max-width: 1023px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+    padding: 48px 32px;
+  }
+
+  .footer-bottom-bar {
+    padding: 1.5rem 32px;
+  }
 }
 
 .footer-col {
@@ -135,10 +155,10 @@ const currentYear = computed(() => new Date().getFullYear())
 }
 
 .footer-col h3 {
-  font-size: 1.05rem;
+  font-size: 16px;
   font-weight: 600;
   color: var(--color-white);
-  margin-bottom: 1.25rem;
+  margin-bottom: 16px;
   padding-bottom: 8px;
   border-bottom: 1px solid rgba(196, 196, 196, 0.2);
   display: block;
@@ -177,7 +197,7 @@ const currentYear = computed(() => new Date().getFullYear())
   font-size: 0.88rem;
   line-height: 1.8;
   color: var(--color-silver);
-  max-width: 36ch;
+  max-width: 38ch;
 }
 
 .social-icons {
@@ -224,17 +244,18 @@ const currentYear = computed(() => new Date().getFullYear())
   color: var(--color-silver);
 }
 
-.info-icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.contact-icon {
   color: #B26A5D;
   flex-shrink: 0;
   margin-top: 3px;
 }
 
-.w-full {
-  width: 100%;
+/* Footer Map */
+.footer-map {
+  margin-top: 16px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(196, 196, 196, 0.15);
 }
 
 .footer-bottom-bar {
@@ -246,21 +267,8 @@ const currentYear = computed(() => new Date().getFullYear())
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   font-size: 0.85rem;
   color: #7E8C9F;
-  max-width: 1400px;
+  max-width: 1440px;
   margin: 0 auto;
-}
-
-/* Tablet adjustments (769px - 1023px) */
-@media (min-width: 769px) and (max-width: 1023px) {
-  .footer-container {
-    grid-template-columns: 1fr 1fr;
-    padding: 48px 32px;
-    gap: 36px;
-  }
-
-  .footer-bottom-bar {
-    padding: 1.5rem 32px;
-  }
 }
 
 /* Mobile — إعادة تنظيم كاملة */
@@ -270,10 +278,6 @@ const currentYear = computed(() => new Date().getFullYear())
     flex-direction: column;
     gap: 40px;
     padding: 48px 24px;
-  }
-
-  .footer-links-wrapper {
-    display: contents;
   }
 
   /* كل column تاخد عرض كامل */
@@ -332,6 +336,14 @@ const currentYear = computed(() => new Date().getFullYear())
     margin-bottom: 12px;
     font-size: 14px;
     direction: rtl;
+  }
+
+  .footer-map {
+    margin-top: 20px;
+  }
+
+  .footer-map iframe {
+    height: 200px;
   }
 
   /* Bottom bar */
