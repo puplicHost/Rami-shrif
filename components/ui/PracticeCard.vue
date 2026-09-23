@@ -149,15 +149,38 @@ defineProps({
 
 @media (max-width: 639px) {
   .practice-card {
-    padding: 1.25rem;
+    padding: 1.15rem 0.95rem;
+    border-radius: var(--radius-sm);
   }
+
+  .card-icon-wrap {
+    width: 38px;
+    height: 38px;
+    margin-bottom: 0.85rem;
+  }
+
+  .card-icon-wrap :deep(svg) {
+    width: 20px;
+    height: 20px;
+  }
+
   .card-title {
-    font-size: 1.05rem;
+    font-size: 0.98rem;
+    line-height: 1.35;
+    margin-bottom: 0.35rem;
   }
+
   .card-desc {
-    font-size: 0.82rem;
-    margin-bottom: 1rem;
+    font-size: 0.78rem;
+    line-height: 1.6;
+    margin-bottom: 0.85rem;
   }
+
+  .card-footer {
+    padding-top: 0.65rem;
+    font-size: 0.78rem;
+  }
+
   .full-width-mobile {
     grid-column: 1 / -1;
   }

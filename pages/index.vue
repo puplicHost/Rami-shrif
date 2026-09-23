@@ -889,19 +889,19 @@ const toggleAccordion = (index) => {
 .practice-cards-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .practice-cards-grid {
+    gap: 1.5rem;
+  }
 }
 
 @media (min-width: 1024px) {
   .practice-cards-grid {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.75rem;
-  }
-}
-
-@media (max-width: 639px) {
-  .practice-cards-grid {
-    grid-template-columns: 1fr;
   }
 }
 
