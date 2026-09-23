@@ -1,64 +1,30 @@
 <template>
   <footer class="footer-section bg-navy-dark">
     <div class="container footer-container">
-      <div class="footer-main-grid">
-        <!-- Col 1: Brand & Tagline -->
-        <div class="footer-brand-col">
-          <AppLogo theme="dark" :size="52" />
-          <p class="footer-tagline">
-            نفهم الملف… نُقيّم الموقف… ونختار المسار القانوني الأنسب.
-          </p>
-          <p class="footer-desc">
-            مؤسسة قانونية رائدة تقدم خدمات المحاماة والاستشارات القانونية المتكاملة للأفراد والشركات، قائمة على دراسة الوقائع والدقة في التحليل واختيار الحل الأنجز.
-          </p>
-        </div>
+      <div class="footer-two-col-grid">
+        <!-- Col 1: Brand, Tagline, Quick Links & Social -->
+        <div class="footer-col footer-col-brand">
+          <div class="brand-header-wrap">
+            <AppLogo theme="dark" :size="52" />
+            <p class="footer-tagline">
+              نفهم الملف… نُقيّم الموقف… ونختار المسار القانوني الأنسب.
+            </p>
+            <p class="footer-desc">
+              مؤسسة قانونية رائدة تقدم خدمات المحاماة والاستشارات القانونية المتكاملة للأفراد والشركات، قائمة على دراسة الوقائع والدقة في التحليل واختيار الحل الأنجز.
+            </p>
+          </div>
 
-        <!-- Col 2: Navigation Links -->
-        <div class="footer-links-col">
-          <h4 class="footer-heading">التنقل السريع</h4>
-          <ul class="footer-list">
-            <li><NuxtLink to="/">الرئيسية</NuxtLink></li>
-            <li><NuxtLink to="/about">من نحن ورؤيتنا</NuxtLink></li>
-            <li><NuxtLink to="/methodology">منهجنا في العمل</NuxtLink></li>
-            <li><NuxtLink to="/corporate">للشركات والمؤسسات</NuxtLink></li>
-            <li><NuxtLink to="/individuals">للأفراد</NuxtLink></li>
-            <li><NuxtLink to="/contact">تواصل معنا</NuxtLink></li>
-          </ul>
-        </div>
-
-        <!-- Col 3: Practice Areas Links -->
-        <div class="footer-links-col">
-          <h4 class="footer-heading">مجالات العمل</h4>
-          <ul class="footer-list">
-            <li><NuxtLink to="/practice-areas/civil">القانون المدني</NuxtLink></li>
-            <li><NuxtLink to="/practice-areas/commercial">القانون التجاري</NuxtLink></li>
-            <li><NuxtLink to="/practice-areas/corporate-law">قانون الشركات</NuxtLink></li>
-            <li><NuxtLink to="/practice-areas/personal-status">الأحوال الشخصية</NuxtLink></li>
-            <li><NuxtLink to="/practice-areas/financial-disputes">المنازعات المالية</NuxtLink></li>
-          </ul>
-        </div>
-
-        <!-- Col 4: Contact Placeholder & Office Info -->
-        <div class="footer-contact-col">
-          <h4 class="footer-heading">معلومات التواصل</h4>
-          <ul class="contact-info-list">
-            <li class="contact-info-item">
-              <span class="info-icon"><MapPin :size="18" :stroke-width="1.75" /></span>
-              <span>القاهرة، جمهورية مصر العربية</span>
-            </li>
-            <li class="contact-info-item">
-              <span class="info-icon"><Phone :size="18" :stroke-width="1.75" /></span>
-              <span dir="ltr">+20 100 000 0000</span>
-            </li>
-            <li class="contact-info-item">
-              <span class="info-icon"><Mail :size="18" :stroke-width="1.75" /></span>
-              <span>info@ramisherif-law.com</span>
-            </li>
-            <li class="contact-info-item">
-              <span class="info-icon"><Clock :size="18" :stroke-width="1.75" /></span>
-              <span>الأحد – الخميس: 9:00 ص – 6:00 م</span>
-            </li>
-          </ul>
+          <div class="footer-sub-section">
+            <h4 class="footer-heading">التنقل السريع</h4>
+            <ul class="footer-list">
+              <li><NuxtLink to="/">الرئيسية</NuxtLink></li>
+              <li><NuxtLink to="/about">من نحن ورؤيتنا</NuxtLink></li>
+              <li><NuxtLink to="/methodology">منهجنا في العمل</NuxtLink></li>
+              <li><NuxtLink to="/corporate">للشركات والمؤسسات</NuxtLink></li>
+              <li><NuxtLink to="/individuals">للأفراد</NuxtLink></li>
+              <li><NuxtLink to="/contact">تواصل معنا</NuxtLink></li>
+            </ul>
+          </div>
 
           <!-- Social media icons -->
           <div class="footer-social-links" aria-label="منصات التواصل الاجتماعي">
@@ -74,6 +40,42 @@
             <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Instagram">
               <Instagram :size="18" :stroke-width="1.75" />
             </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Practice Areas & Contact Details -->
+        <div class="footer-col footer-col-info">
+          <div class="footer-sub-section">
+            <h4 class="footer-heading">مجالات العمل</h4>
+            <ul class="footer-list">
+              <li><NuxtLink to="/practice-areas/civil">القانون المدني</NuxtLink></li>
+              <li><NuxtLink to="/practice-areas/commercial">القانون التجاري</NuxtLink></li>
+              <li><NuxtLink to="/practice-areas/corporate-law">قانون الشركات</NuxtLink></li>
+              <li><NuxtLink to="/practice-areas/personal-status">الأحوال الشخصية</NuxtLink></li>
+              <li><NuxtLink to="/practice-areas/financial-disputes">المنازعات المالية</NuxtLink></li>
+            </ul>
+          </div>
+
+          <div class="footer-sub-section">
+            <h4 class="footer-heading">معلومات التواصل والحجز</h4>
+            <ul class="contact-info-list">
+              <li class="contact-info-item">
+                <span class="info-icon"><MapPin :size="18" :stroke-width="1.75" /></span>
+                <span>القاهرة، جمهورية مصر العربية</span>
+              </li>
+              <li class="contact-info-item">
+                <span class="info-icon"><Phone :size="18" :stroke-width="1.75" /></span>
+                <span dir="ltr">+20 100 000 0000</span>
+              </li>
+              <li class="contact-info-item">
+                <span class="info-icon"><Mail :size="18" :stroke-width="1.75" /></span>
+                <span>info@ramisherif-law.com</span>
+              </li>
+              <li class="contact-info-item">
+                <span class="info-icon"><Clock :size="18" :stroke-width="1.75" /></span>
+                <span>الأحد – الخميس: 9:00 ص – 6:00 م</span>
+              </li>
+            </ul>
           </div>
 
           <div class="footer-cta-box">
@@ -121,31 +123,90 @@ const currentYear = computed(() => new Date().getFullYear())
   background-color: #121B2A;
 }
 
-.footer-main-grid {
+.footer-two-col-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: clamp(20px, 4vw, 56px);
   padding-bottom: 3.5rem;
   border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-@media (min-width: 640px) {
-  .footer-main-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (min-width: 1024px) {
-  .footer-main-grid {
-    grid-template-columns: 2.2fr 1fr 1fr 1.5fr;
-    gap: 3rem;
-  }
-}
-
-.footer-brand-col {
+.footer-col {
   display: flex;
   flex-direction: column;
-  gap: 1.15rem;
+  gap: 1.75rem;
+}
+
+.brand-header-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.footer-sub-section {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 639px) {
+  .footer-section {
+    padding-top: 3rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .footer-two-col-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    padding-bottom: 2rem;
+  }
+
+  .footer-col {
+    gap: 1.25rem;
+  }
+
+  .footer-tagline {
+    font-size: 0.85rem;
+    line-height: 1.4;
+  }
+
+  .footer-desc {
+    display: none;
+  }
+
+  .footer-heading {
+    font-size: 0.92rem;
+    margin-bottom: 0.85rem;
+  }
+
+  .footer-list a {
+    font-size: 0.8rem;
+  }
+
+  .contact-info-list {
+    gap: 0.5rem;
+  }
+
+  .contact-info-item {
+    font-size: 0.78rem;
+    gap: 0.4rem;
+    word-break: break-all;
+  }
+
+  .social-link {
+    width: 30px;
+    height: 30px;
+  }
+
+  .footer-cta-box .btn {
+    padding: 0.55rem 0.85rem;
+    font-size: 0.78rem;
+    width: 100%;
+  }
+
+  .footer-bottom-bar {
+    font-size: 0.75rem;
+    padding-top: 1.25rem;
+  }
 }
 
 .footer-tagline {
@@ -160,7 +221,7 @@ const currentYear = computed(() => new Date().getFullYear())
   font-size: 0.88rem;
   line-height: 1.8;
   color: var(--color-silver);
-  max-width: 40ch;
+  max-width: 44ch;
 }
 
 .footer-heading {
