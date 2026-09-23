@@ -75,19 +75,6 @@
             <span>الأحد – الخميس: 9:00 ص – 6:00 م</span>
           </div>
         </div>
-
-        <div class="footer-cta desktop-cta">
-          <NuxtLink to="/contact" class="btn btn-primary btn-sm w-full">
-            احجز استشارة قانونية
-          </NuxtLink>
-        </div>
-      </div>
-
-      <!-- 5. CTA Button on Mobile (Order 5 on Mobile) -->
-      <div class="footer-cta mobile-cta">
-        <NuxtLink to="/contact" class="btn btn-primary btn-sm w-full">
-          احجز استشارة قانونية
-        </NuxtLink>
       </div>
     </div>
 
@@ -246,14 +233,6 @@ const currentYear = computed(() => new Date().getFullYear())
   margin-top: 3px;
 }
 
-.desktop-cta {
-  margin-top: 1.5rem;
-}
-
-.mobile-cta {
-  display: none;
-}
-
 .w-full {
   width: 100%;
 }
@@ -323,29 +302,11 @@ const currentYear = computed(() => new Date().getFullYear())
     order: 4;
   }
 
-  .desktop-cta {
-    display: none;
-  }
-
-  .mobile-cta {
-    display: block;
-    width: 100%;
-    text-align: center;
-    order: 5;
-  }
-
   /* الـ social icons */
   .social-icons {
     justify-content: flex-start;
     gap: 16px;
     margin-top: 16px;
-  }
-
-  /* CTA button */
-  .footer-cta {
-    width: 100%;
-    text-align: center;
-    order: 5;
   }
 
   /* العنوان لكل column */

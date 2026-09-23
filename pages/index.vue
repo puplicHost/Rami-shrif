@@ -255,6 +255,30 @@
         </div>
       </div>
     </section>
+
+    <!-- Map & Address Section -->
+    <section class="map-section fade-in-section" aria-label="مقر المؤسسة والخريطة">
+      <div class="map-container">
+        <!-- العنوان فوق الماب -->
+        <div class="map-address">
+          <MapPin :size="20" />
+          <span>القاهرة، شارع التحرير، برج النيل، الدور الثامن — جمهورية مصر العربية</span>
+        </div>
+
+        <!-- Google Maps Embed -->
+        <div class="map-card">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3453.7!2d31.2357!3d30.0444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAyJzM5LjgiTiAzMcKwMTQnMDguNSJF!5e0!3m2!1sar!2seg!4v1"
+            width="100%"
+            height="320"
+            style="border:0;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
@@ -265,7 +289,8 @@ import {
   Briefcase,
   Building2,
   Users,
-  DollarSign
+  DollarSign,
+  MapPin
 } from 'lucide-vue-next'
 
 useHead({
@@ -1007,5 +1032,55 @@ const toggleAccordion = (index) => {
   justify-content: center;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+/* Map & Address Section */
+.map-section {
+  background-color: #F5F0E8;
+  padding: 60px 24px;
+}
+
+.map-container {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.map-address {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 15px;
+  color: #1C2940;
+  font-weight: 500;
+  direction: rtl;
+}
+
+.map-address svg {
+  color: #5A342D;
+  flex-shrink: 0;
+}
+
+.map-card {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(28, 41, 64, 0.1);
+  border: 1px solid rgba(28, 41, 64, 0.08);
+}
+
+@media (max-width: 768px) {
+  .map-section {
+    padding: 40px 16px;
+  }
+
+  .map-card iframe {
+    height: 260px;
+  }
+
+  .map-address {
+    font-size: 13px;
+  }
 }
 </style>
