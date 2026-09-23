@@ -836,13 +836,13 @@ const toggleAccordion = (index) => {
 
 .steps-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
   .steps-grid {
-    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 }
 

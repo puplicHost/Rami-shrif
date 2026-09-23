@@ -100,56 +100,38 @@ defineProps({
 
 @media (max-width: 767px) {
   .step-item {
-    display: flex;
-    gap: 1.25rem;
-    padding-bottom: 2rem;
-  }
-
-  .step-item.is-last {
+    display: block;
+    height: 100%;
     padding-bottom: 0;
   }
 
   .timeline-indicator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 24px;
-    flex-shrink: 0;
-  }
-
-  .timeline-dot {
-    width: 14px;
-    height: 14px;
-    border-radius: 50%;
-    background-color: #B26A5D;
-    border: 3px solid var(--color-navy);
-    box-shadow: 0 0 0 2px #B26A5D;
-    margin-top: 6px;
-    flex-shrink: 0;
-  }
-
-  .timeline-line {
-    width: 2px;
-    flex-grow: 1;
-    background: linear-gradient(to bottom, #B26A5D 0%, rgba(178, 106, 93, 0.2) 100%);
-    margin-top: 4px;
+    display: none !important;
   }
 
   .step-card-inner {
-    flex-grow: 1;
-    padding: 1.25rem 1.5rem;
+    padding: 1.15rem 0.95rem;
+    border-radius: var(--radius-sm);
+    height: 100%;
+  }
+
+  .step-header {
+    gap: 0.35rem;
+    margin-bottom: 0.65rem;
   }
 
   .step-number {
-    font-size: 1.75rem;
+    font-size: 1.55rem;
   }
 
   .step-title {
-    font-size: 1.1rem;
+    font-size: 0.98rem;
+    line-height: 1.35;
   }
 
   .step-description {
-    font-size: 0.88rem;
+    font-size: 0.78rem;
+    line-height: 1.6;
   }
 }
 </style>
