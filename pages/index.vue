@@ -185,28 +185,28 @@
       </div>
     </section>
 
-    <!-- 7. للشركات والمؤسسات — Corporate Teaser -->
-    <section class="corporate-teaser-section fade-in-section" aria-label="خدمات الشركات والمؤسسات">
-      <div class="corporate-bg-wrap">
+    <!-- 7. للأفراد — Individuals Teaser (Dark Background) -->
+    <section class="individuals-teaser-section dark-teaser-section fade-in-section" aria-label="خدمات الأفراد">
+      <div class="teaser-bg-wrap">
         <img
           src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1920&q=80"
-          alt="اجتماع أعمال واستشارات للشركات"
-          class="corporate-bg-img"
+          alt="استشارات قانونية للأفراد"
+          class="teaser-bg-img"
           loading="lazy"
         />
-        <div class="corporate-overlay"></div>
+        <div class="teaser-overlay"></div>
       </div>
 
-      <div class="container corporate-container">
-        <div class="corporate-content-box">
-          <SectionLabel text="للشركات والمؤسسات" theme="dark" />
-          <h2 class="h1-title corporate-title">خبرة تتجاوز النص القانوني</h2>
-          <p class="body-lead corporate-text">
-            العمل القانوني مع الشركات لا يتطلب المعرفة القانونية فحسب، بل يستلزم فهم طبيعة النشاط والتحديات المرتبطة به.
+      <div class="container teaser-container">
+        <div class="teaser-content-box">
+          <SectionLabel text="للأفراد" theme="dark" />
+          <h2 class="h1-title teaser-title">كل ملف له خصوصيته</h2>
+          <p class="body-lead teaser-text">
+            نقدم للأفراد خدمات المحاماة والاستشارات القانونية من خلال دراسة الحالة وتقييم الموقف القانوني بدقة تحفظ السرية وتصون الحقوق.
           </p>
-          <div class="corporate-cta-wrap">
-            <NuxtLink to="/corporate" class="btn btn-primary">
-              اكتشف كيف ندعم الشركات
+          <div class="teaser-cta-wrap">
+            <NuxtLink to="/individuals" class="btn btn-primary">
+              تحدث معنا حول ملفك
               <span aria-hidden="true">←</span>
             </NuxtLink>
           </div>
@@ -214,18 +214,18 @@
       </div>
     </section>
 
-    <!-- 8. للأفراد — Individuals Teaser -->
-    <section class="section bg-cream individuals-teaser-section fade-in-section" aria-label="خدمات الأفراد">
+    <!-- 8. للشركات والمؤسسات — Corporate Teaser (Cream Background) -->
+    <section class="section bg-cream corporate-teaser-section fade-in-section" aria-label="خدمات الشركات والمؤسسات">
       <div class="container">
-        <div class="individuals-content-box">
-          <SectionLabel text="للأفراد" theme="light" />
-          <h2 class="h1-title section-title-dark">كل ملف له خصوصيته</h2>
-          <p class="body-lead text-dark-muted individuals-body">
-            نقدم للأفراد خدمات المحاماة والاستشارات القانونية من خلال دراسة الحالة وتقييم الموقف القانوني بدقة تحفظ السرية وتصون الحقوق.
+        <div class="corporate-content-box">
+          <SectionLabel text="للشركات والمؤسسات" theme="light" />
+          <h2 class="h1-title section-title-dark">خبرة تتجاوز النص القانوني</h2>
+          <p class="body-lead text-dark-muted corporate-body">
+            العمل القانوني مع الشركات لا يتطلب المعرفة القانونية فحسب، بل يستلزم فهم طبيعة النشاط والتحديات المرتبطة به.
           </p>
-          <div class="individuals-action">
-            <NuxtLink to="/individuals" class="btn btn-primary">
-              تحدث معنا حول ملفك
+          <div class="corporate-cta-wrap">
+            <NuxtLink to="/corporate" class="btn btn-primary">
+              اكتشف كيف ندعم الشركات
               <span aria-hidden="true">←</span>
             </NuxtLink>
           </div>
@@ -915,28 +915,28 @@ const toggleAccordion = (index) => {
   color: var(--color-muted-text);
 }
 
-/* 7. Corporate Teaser */
-.corporate-teaser-section {
+/* 7. Individuals Teaser (Dark Background) */
+.dark-teaser-section {
   position: relative;
   padding: clamp(5rem, 10vw, 7.5rem) 0;
   overflow: hidden;
   background-color: var(--color-navy);
 }
 
-.corporate-bg-wrap {
+.teaser-bg-wrap {
   position: absolute;
   inset: 0;
   z-index: 1;
 }
 
-.corporate-bg-img {
+.teaser-bg-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   filter: brightness(0.4) contrast(1.1);
 }
 
-.corporate-overlay {
+.teaser-overlay {
   position: absolute;
   inset: 0;
   background: linear-gradient(
@@ -947,31 +947,32 @@ const toggleAccordion = (index) => {
   );
 }
 
-.corporate-container {
+.teaser-container {
   position: relative;
   z-index: 2;
 }
 
-.corporate-content-box {
-  max-width: 620px;
+.teaser-content-box {
+  max-width: 640px;
 }
 
-.corporate-title {
+.teaser-title {
   color: var(--color-white);
   margin-top: 0.5rem;
   margin-bottom: 1.25rem;
 }
 
-.corporate-text {
+.teaser-text {
   margin-bottom: 2.25rem;
+  color: var(--color-silver);
 }
 
-/* 8. Individuals Teaser */
-.individuals-content-box {
+/* 8. Corporate Teaser (Cream Background) */
+.corporate-content-box {
   max-width: 680px;
 }
 
-.individuals-body {
+.corporate-body {
   margin-top: 0.75rem;
   margin-bottom: 2rem;
 }
