@@ -1,0 +1,15 @@
+name: rami-sherif-law-firm
+
+services:
+  web:
+    build: .
+    container_name: rami_sherif_law_app
+    restart: unless-stopped
+    expose:
+      - "80"
+    networks:
+      - proxy
+
+networks:
+  proxy:
+    external: true
