@@ -11,29 +11,28 @@
           مؤسسة قانونية رائدة تقدم خدمات المحاماة والاستشارات القانونية المتكاملة للأفراد والشركات، قائمة على دراسة الوقائع والدقة في التحليل واختيار الحل الأنجز.
         </p>
         <div class="social-icons">
-          <a href="https://www.facebook.com/ramisharif.law/"
-             target="_blank" rel="noopener noreferrer" aria-label="فيسبوك">
-            <Icon icon="logos:facebook" width="32" height="32" />
+          <a href="https://www.facebook.com/ramy.law.firm"
+             target="_blank" rel="noopener noreferrer" aria-label="فيسبوك"
+             class="social-link social-facebook">
+            <Icon icon="mdi:facebook" width="24" height="24" />
           </a>
 
-          <a href="https://www.instagram.com/ramisharifeg/"
-             target="_blank" rel="noopener noreferrer" aria-label="إنستاجرام">
-            <Icon icon="skill-icons:instagram" width="32" height="32" />
+          <a href="https://www.instagram.com/ramy.law.firm"
+             target="_blank" rel="noopener noreferrer" aria-label="إنستاجرام"
+             class="social-link social-instagram">
+            <Icon icon="mdi:instagram" width="24" height="24" />
           </a>
 
-          <a href="https://www.linkedin.com/company/ramisharifeg"
-             target="_blank" rel="noopener noreferrer" aria-label="لينكدإن">
-            <Icon icon="logos:linkedin-icon" width="32" height="32" />
+          <a href="https://www.tiktok.com/@ramy.sherief.law"
+             target="_blank" rel="noopener noreferrer" aria-label="تيك توك"
+             class="social-link social-tiktok">
+            <Icon icon="ic:baseline-tiktok" width="24" height="24" />
           </a>
 
-          <a href="https://www.youtube.com/@ramisharif.law"
-             target="_blank" rel="noopener noreferrer" aria-label="يوتيوب">
-            <Icon icon="logos:youtube-icon" width="32" height="32" />
-          </a>
-
-          <a href="https://wa.me/201111904997"
-             target="_blank" rel="noopener noreferrer" aria-label="واتساب">
-            <Icon icon="logos:whatsapp-icon" width="32" height="32" />
+          <a href="https://www.linkedin.com/company/ramy-sherief-law"
+             target="_blank" rel="noopener noreferrer" aria-label="لينكدإن"
+             class="social-link social-linkedin">
+            <Icon icon="mdi:linkedin" width="24" height="24" />
           </a>
         </div>
       </div>
@@ -230,13 +229,31 @@ const currentYear = computed(() => new Date().getFullYear())
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  background: none;
+  color: #C4C4C4;
+  transition: color 0.2s ease;
   text-decoration: none;
+  padding: 0;
 }
 
 .social-icons a:hover {
-  transform: translateY(-3px);
-  opacity: 0.85;
+  padding-right: 0;
+}
+
+.social-icons a.social-facebook:hover {
+  color: #1877F2;
+}
+
+.social-icons a.social-instagram:hover {
+  color: #E4405F;
+}
+
+.social-icons a.social-tiktok:hover {
+  color: #000000;
+}
+
+.social-icons a.social-linkedin:hover {
+  color: #0A66C2;
 }
 
 .contact-list {

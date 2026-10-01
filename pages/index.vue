@@ -15,16 +15,16 @@
       <div class="container hero-container">
         <div class="hero-content">
           <h1 class="display-title hero-title">
-            <span class="hero-line">نفهم الملف…</span>
-            <span class="hero-line">نُقيّم الموقف…</span>
-            <span class="hero-line hero-line-accent">ونختار المسار القانوني الأنسب.</span>
+            <span class="hero-line hero-line-1">نفهم الملف…</span>
+            <span class="hero-line hero-line-2">نُقيّم الموقف…</span>
+            <span class="hero-line hero-line-accent hero-line-3">ونختار المسار القانوني الأنسب.</span>
           </h1>
 
-          <p class="body-lead hero-description">
+          <p class="body-lead hero-description hero-sub-animate">
             مؤسسة قانونية تقدم خدمات المحاماة والاستشارات القانونية للأفراد والشركات والمؤسسات.
           </p>
 
-          <div class="hero-cta-group">
+          <div class="hero-cta-group hero-cta-animate">
             <NuxtLink to="/contact" class="btn btn-primary">
               احجز استشارة قانونية
               <svg viewBox="0 0 20 20" fill="currentColor" width="18" height="18" aria-hidden="true">
@@ -505,6 +505,55 @@ const toggleAccordion = (index) => {
 .hero-line-accent {
   color: #DFC0BA;
   font-weight: 700;
+}
+
+/* Hero Staggered Entrance Animation */
+@keyframes heroFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-line-1 {
+  opacity: 0;
+  animation: heroFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.15s both;
+}
+
+.hero-line-2 {
+  opacity: 0;
+  animation: heroFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.45s both;
+}
+
+.hero-line-3 {
+  opacity: 0;
+  animation: heroFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 0.75s both;
+}
+
+.hero-sub-animate {
+  opacity: 0;
+  animation: heroFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 1.05s both;
+}
+
+.hero-cta-animate {
+  opacity: 0;
+  animation: heroFadeUp 0.75s cubic-bezier(0.16, 1, 0.3, 1) 1.30s both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-line-1,
+  .hero-line-2,
+  .hero-line-3,
+  .hero-sub-animate,
+  .hero-cta-animate {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
 
 .hero-description {
