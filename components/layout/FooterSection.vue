@@ -116,6 +116,9 @@
         <span>الالتزام بأعلى معايير السرية والمهنية القانونية</span>
       </div>
     </div>
+    <div class="footer-dev-credit">
+      <span>Developed by <a href="https://yaaalla.com/" target="_blank" rel="noopener noreferrer" class="dev-link">yaaalla</a></span>
+    </div>
   </footer>
 </template>
 
@@ -318,6 +321,30 @@ const currentYear = computed(() => new Date().getFullYear())
   color: #7E8C9F;
   max-width: 1440px;
   margin: 0 auto;
+}
+
+.footer-bottom-notes {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.footer-dev-credit {
+  text-align: center;
+  padding: 0 24px 20px;
+  font-size: 0.85rem;
+  color: #7E8C9F;
+}
+
+.dev-link {
+  color: #7E8C9F;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.dev-link:hover {
+  color: var(--color-white);
 }
 
 /* Mobile — إعادة تنظيم كاملة */
