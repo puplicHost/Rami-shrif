@@ -141,17 +141,6 @@
                   </div>
                 </div>
 
-                <!-- العنوان 2 -->
-                <div class="info-block">
-                  <span class="info-block-icon">
-                    <Building2 :size="20" :stroke-width="1.75" />
-                  </span>
-                  <div>
-                    <strong class="info-title">الفرع الثاني:</strong>
-                    <p class="info-desc">شارع الجلاء، أمام مستشفى العقاد، برج أبو بكر الصديق، الدور الخامس</p>
-                  </div>
-                </div>
-
                 <!-- الهاتف -->
                 <div class="info-block">
                   <span class="info-block-icon">
@@ -161,9 +150,6 @@
                     <strong class="info-title">أرقام التواصل:</strong>
                     <p class="info-desc">
                       موبايل: <a href="tel:01111904997" dir="ltr" class="phone-link">01111904997</a>
-                    </p>
-                    <p class="info-desc">
-                      أرضي: <a href="tel:034863096" dir="ltr" class="phone-link">034863096</a>
                     </p>
                   </div>
                 </div>
@@ -197,7 +183,7 @@
                   </span>
                   <div>
                     <strong class="info-title">أوقات العمل واستقبال العملاء:</strong>
-                    <p class="info-desc">الأحد – الخميس: 9:00 صباحاً – 6:00 مساءً</p>
+                    <p class="info-desc">السبت – الخميس: 9:00 صباحاً – 5:00 مساءً</p>
                     <p class="info-subdesc">المقابلات بحجز مسبق</p>
                   </div>
                 </div>

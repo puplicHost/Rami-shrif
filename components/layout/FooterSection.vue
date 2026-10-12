@@ -74,8 +74,6 @@
             <Phone :size="16" class="contact-icon" />
             <div class="phones-wrap">
               <a href="tel:01111904997" dir="ltr" class="contact-link">01111904997</a>
-              <span class="phone-sep">|</span>
-              <a href="tel:034863096" dir="ltr" class="contact-link">034863096</a>
             </div>
           </div>
           <div class="contact-item">
@@ -84,11 +82,11 @@
           </div>
           <div class="contact-item">
             <MessageCircle :size="16" class="contact-icon" />
-            <a href="https://wa.me/201111904997" target="_blank" rel="noopener noreferrer" class="contact-link" dir="ltr">واتساب: +20 111 190 4997</a>
+            <a href="https://wa.me/201111904997" target="_blank" rel="noopener noreferrer" class="contact-link whatsapp-link"><span>واتساب:</span> <span dir="ltr">+20 111 190 4997</span></a>
           </div>
           <div class="contact-item">
             <Clock :size="16" class="contact-icon" />
-            <span>الأحد – الخميس: 9:00 ص – 6:00 م</span>
+            <span>السبت – الخميس: 9:00 ص – 5:00 م</span>
           </div>
         </div>
 
@@ -300,6 +298,12 @@ const currentYear = computed(() => new Date().getFullYear())
 
 .contact-link:hover {
   color: var(--color-white);
+}
+
+.whatsapp-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 }
 
 /* Footer Map */
