@@ -1,12 +1,12 @@
 <template>
   <NuxtLink to="/" class="app-logo" :class="[theme, { 'is-scrolled': isScrolled }]">
     <div class="logo-icon-wrap" :style="{ width: sizePx + 'px', height: sizePx + 'px' }">
-      <img src="/logo.png" alt="رامي شريف للمحاماة" class="logo-img" />
+      <img src="/logo.png" alt="رَامِي شَرِيف لِلْمُحَامَاة - Ramy Sherif Law Firm" class="logo-img" />
     </div>
     
     <div class="logo-typography" v-if="!iconOnly">
-      <span class="firm-name">مؤسسة رامي شريف</span>
-      <span class="firm-tagline">للمحاماة والاستشارات القانونية</span>
+      <span class="firm-name">رَامِي شَرِيف لِلْمُحَامَاة</span>
+      <span class="firm-name-latin-line">Ramy Sherif Law Firm</span>
     </div>
   </NuxtLink>
 </template>
@@ -84,10 +84,36 @@ const sizePx = computed(() => Number(props.size) || 52)
   white-space: nowrap;
 }
 
+.firm-name-latin {
+  font-family: var(--font-body);
+  font-size: 0.85em;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  direction: ltr;
+  unicode-bidi: embed;
+}
+
+.firm-name-latin-line {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  direction: ltr;
+  text-align: start;
+  white-space: nowrap;
+}
+
+/* Legacy tagline (kept for compatibility) */
 .firm-tagline {
   font-size: 0.75rem;
   font-weight: 500;
   white-space: nowrap;
+}
+
+.firm-tagline-en {
+  font-family: var(--font-body);
+  letter-spacing: 0.02em;
+  direction: ltr;
 }
 
 /* Theme variations */
@@ -108,7 +134,8 @@ const sizePx = computed(() => Number(props.size) || 52)
   color: #FFFFFF;
 }
 
-.dark .firm-tagline {
+.dark .firm-tagline,
+.dark .firm-name-latin-line {
   color: #A0AEC0;
 }
 
@@ -129,13 +156,18 @@ const sizePx = computed(() => Number(props.size) || 52)
   color: #1C2940;
 }
 
-.light .firm-tagline {
+.light .firm-tagline,
+.light .firm-name-latin-line {
   color: #5A6270;
 }
 
 @media (max-width: 768px) {
   .firm-name {
     font-size: 1.05rem;
+    white-space: nowrap;
+  }
+  .firm-name-latin-line {
+    font-size: 0.68rem;
   }
   .firm-tagline {
     font-size: 0.68rem;
